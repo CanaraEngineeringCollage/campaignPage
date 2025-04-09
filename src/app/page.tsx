@@ -14,7 +14,7 @@ import PlacementSection from "@/components/PlacementSection/PlacementSection";
 export default function Home() {
   return (
     <>
-      <section className="relative h-screen">
+      <section >
         <HeroBanner />
       </section>
       <section className="md:hidden block">
@@ -41,9 +41,9 @@ export default function Home() {
       {/* <section>
         <CampusExperiences/>
       </section> */}
-      <section>
+      {/* <section>
         <AlumniInsights/>
-      </section>
+      </section> */}
       <section>
         <Footer/>
       </section>

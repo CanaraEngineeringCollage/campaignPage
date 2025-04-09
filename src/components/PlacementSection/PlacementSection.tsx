@@ -86,7 +86,14 @@ const PlacementSection = () => {
                 </button>
               </div>
               <div className="flex-1">
-                <Image src="/Success.png" alt="Success" width={500} height={100} className="hidden md:flex object-cover z-0 top-[2.5%]  absolute" priority />
+                <Image 
+                  src="/Success.png" 
+                  alt="Success" 
+                  width={500} 
+                  height={100} 
+                  className="hidden md:flex object-cover z-0 absolute right-0 top-11 transform -translate-y-1/4" 
+                  priority 
+                />
               </div>
             </div>
           </div>

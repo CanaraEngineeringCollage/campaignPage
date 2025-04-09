@@ -56,9 +56,9 @@ const HeroBanner = () => {
   const isFormInView = useInView(formRef, { once: true });
 
   return (
-    <div className="min-h-screen">
+    <div className="h-[150vh]">
       {/* Main Content with Background Image */}
-      <main className="relative h-[110vh] flex  items-center justify-center">
+      <main className="relative h-[150vh] flex  items-center justify-center">
         {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Swiper
@@ -76,7 +76,7 @@ const HeroBanner = () => {
             modules={[Autoplay, Pagination]}
           >
             <SwiperSlide>
-              <div className="relative w-full h-[89vh]">
+              <div className="relative w-full h-full">
                 <Image src={websitebg1} alt="Students 1" fill className="object-cover sm:object-[30%_center] object-[15%_center]" />
                 {/* Gradient overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-white via-transparent to-transparent z-10" />

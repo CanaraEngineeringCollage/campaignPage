@@ -32,10 +32,10 @@ const CounselingForm = () => {
 
   return (
     <div className='flex justify-center mt-[-10px] bg-gradient-to-t from-white to-transparent opacity-90'>
-      <div className="absolute bottom-[-10rem] left-0  right-0 h-1/4 bg-gradient-to-b from-transparent to-white opacity-90"></div>
+    
     {/* Optional: Gradient layer behind the form */}
 
-      <div className="bg-white shadow-2xl w-full max-w-7xl p-10 rounded-xl shadow-xl">
+      <div className="bg-white  w-full max-w-7xl p-10 rounded-xl ">
         {/* Headings */}
         <h2 className="text-center text-[#1A97A2] font-bold text-2xl md:text-3xl mb-2">
           Ready to Shape Your Future?
