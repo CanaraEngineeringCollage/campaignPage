@@ -1,5 +1,34 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// Add custom styles for Swiper pagination
+const swiperStyles = `
+  .swiper-pagination {
+    bottom: 0px !important;
+    position: absolute !important;
+    width: 100%;
+    text-align: center;
+  }
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background: white !important;
+    opacity: 0.7 !important;
+    margin: 0 4px;
+    border-radius: 5px !important;
+    transition: all 0.3s ease !important;
+  }
+  .swiper-pagination-bullet-active {
+    width: 40px !important;
+    opacity: 1 !important;
+  }
+`;
 
 const stats = [
   {
@@ -27,48 +56,104 @@ const logos = [
   "/logos/verifone.png",
   "/logos/sasken.png",
   "/logos/juspay.png",
-  // add more as needed
 ];
 
 const PlacementSection = () => {
   return (
-    <section className="bg-gradient-to-br  text-white py-12 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto space-y-10">
-        {/* Heading */}
-        <div className="text-center max-w-full bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2]">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 ">
-            Step into a future of success
-          </h2>
-          <p className="text-white/80 max-w-xl mx-auto">
-            Step into a future of possibilities with expert guidance, hands-on
-            learning & a seamless admission process.
-          </p>
-          <button className="mt-6 px-5 py-2 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-100 transition">
-            Get Started
-          </button>
-        </div>
+    <section className="relative min-h-[160vh] text-white py-12 px-6 md:px-12 overflow-hidden ">
+      {/* Add custom styles */}
+      <style jsx global>
+        {swiperStyles}
+      </style>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white/20 backdrop-blur-md p-6 rounded-xl shadow-md"
-            >
-              <h3 className="text-3xl font-bold">{stat.value}</h3>
-              <p className="mt-2 text-sm text-white/90">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Logos */}
-        <div className="bg-white p-6 rounded-xl shadow-md">
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {logos.map((src, idx) => (
-              <div key={idx} className="relative w-28 h-10 grayscale hover:grayscale-0 transition">
-                <Image src={src} alt={`Logo ${idx}`} fill className="object-contain" />
+      {/* Background Image */}
+      <Image src="/texturedBackground.png" alt="Background" fill className="object-cover z-0" priority />
+      {/* Content */}
+      <div className="flex items-center justify-center min-h-[160vh]">
+        <div className="relative z-20 max-w-7xl items-center mx-auto space-y-10 min-h-screen flex flex-col justify-center">
+          {/* Heading */}
+          <div className="w-[100%] bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] p-6 rounded-xl shadow-lg">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+              <div className="flex-1 mt-8 ml-4 mb-8">
+                <h2 className="xl:text-[2.5rem] md:text-[2.5rem] text-[1.5rem] lg:text-[2rem] md:leading-10 leading-7 md:text-4xl font-bold mb-2 ">
+                  Step into a future of success
+                </h2>
+                <p className="text-white max-w-[70%]">
+                  Step into a future of possibilities with expert guidance, hands-on learning & a seamless admission process.
+                </p>
+                <button className="mt-24 px-5 py-2 bg-white text-[#1A97A2] font-semibold rounded-full hover:bg-blue-100 transition">
+                  Get Started
+                </button>
               </div>
-            ))}
+              <div className="flex-1">
+                <Image src="/Success.png" alt="Success" width={500} height={100} className="hidden md:flex object-cover z-0 top-[2.5%]  absolute" priority />
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center w-full">
+            {/* Left Swiper (Card 1) */}
+            <div className="p-6  bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] rounded-xl shadow-md text-center">
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                loop={true}
+                slidesPerView={1}
+                className="w-full  y-14 h-[210px]" // gives space for dots
+              >
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
+            {/* Static Middle Card (Card 2) */}
+            <div className="p-6 bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] rounded-xl shadow-md text-center">
+              <h3 className="text-[60px] font-bold">86%+</h3>
+              <p className="mt-2 text-sm text-white/90">Consistently Strong Placements CEC graduates placed over the last three years</p>
+            </div>
+
+            {/* Right Swiper (Card 3) */}
+            <div className="p-6  bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] rounded-xl shadow-md text-center">
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                loop={true}
+                slidesPerView={1}
+                className="w-full  y-14 h-[210px]" // gives space for dots
+              >
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <h3 className="text-[60px] font-extrabold">600+</h3>
+                  <p className="mt-2 text-xl font-bold">CEC Students placed </p>
+                  <p className="text-xl">in the last three years</p>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>

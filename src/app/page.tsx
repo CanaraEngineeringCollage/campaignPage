@@ -1,9 +1,13 @@
+import AlumniInsights from "@/components/AlumniInsights/AlumniInsights";
+import CampusExperiences from "@/components/CampusExperiences/CampusExperiences";
 import CampusWalkThrough from "@/components/CampusWalkThrough/CampusWalkThrough";
 import ProgramsCarousel from "@/components/ExplorePrograms/ExplorePrograms";
+import Footer from "@/components/Footer/Footer";
 import FormSection from "@/components/FormSection/FormSection";
 import FutureSection from "@/components/FutureSection/FutureSection";
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import Innovations from "@/components/InnovationSection/InnovationSection";
+import PlacementPartners from "@/components/PlacementPartners/PlacementPartners";
 import PlacementSection from "@/components/PlacementSection/PlacementSection";
 
 
@@ -13,9 +17,9 @@ export default function Home() {
       <section className="relative h-screen">
         <HeroBanner />
       </section>
-      {/* <section>
+      <section className="md:hidden block">
         <FormSection/>
-      </section> */}
+      </section>
       <section>
         <FutureSection/>
       </section>
@@ -30,6 +34,18 @@ export default function Home() {
       </section>
       <section>
         <PlacementSection/>
+      </section>
+      <section>
+        <PlacementPartners/>
+      </section>
+      {/* <section>
+        <CampusExperiences/>
+      </section> */}
+      <section>
+        <AlumniInsights/>
+      </section>
+      <section>
+        <Footer/>
       </section>
     </>
   );

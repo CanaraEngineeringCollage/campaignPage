@@ -12,10 +12,33 @@ interface FacilityCardProps {
   gradientColor?: string;
   description: string;
   delay: number;
-  index: number; // Used to alternate direction
+  index: number;
+  subTitle?: string;
+  heading?: string;
+  subHeading?: string;
+  subDescription?: string;
+  bottomDescription?: string;
+  keyHighlights?: string[]; // ✅ Array of strings
+  additionalFeatures?: string[]; // ✅ Optional array of strings
+  // Used to alternate direction
 }
 
-const FacilityCard: React.FC<FacilityCardProps> = ({ title, imageUrl, className = "", gradientColor, delay, index, description }) => {
+const FacilityCard: React.FC<FacilityCardProps> = ({
+  title,
+  imageUrl,
+  className = "",
+  gradientColor,
+  delay,
+  index,
+  description,
+  additionalFeatures,
+  bottomDescription,
+  heading,
+  keyHighlights,
+  subDescription,
+  subHeading,
+  subTitle,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -40,6 +63,13 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ title, imageUrl, className 
           <CardContent
             imageSrc={imageUrl}
             description={description}
+            subTitle={subTitle}
+            heading={heading}
+            subHeading={subHeading}
+            subDescription={subDescription}
+            keyHighlights={keyHighlights}
+            additionalFeatures={additionalFeatures}
+            bottomDescription={bottomDescription}
             backgroundColor=""
             textColor="text-neutral-600"
             headingColor="text-neutral-700"
@@ -55,8 +85,7 @@ function Innovations() {
   const isSectionInView = useInView(sectionRef, { once: true });
 
   return (
-    <div className="min-h-screen relative" ref={sectionRef}>
-      
+    <div className="min-h-screen relative overflow-hidden" ref={sectionRef}>
       <div className="max-w-7xl xl:mx-auto mx-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -73,8 +102,8 @@ function Innovations() {
         </motion.div>
         <div className="lg:grid grid-cols-12 gap-4 hidden relative">
           <FacilityCard
-            title="New Admission Block"
-            description="Manipal School boasts well-stocked libraries that serve as vibrant learning hubs, offering a diverse collection of periodicals, journals, magazines, newsletters, encyclopedias, fiction, and reference books. Our libraries go beyond traditional reading by integrating structured learning programs, including phonics for early learners and literary classics for older students. We are committed to providing a rich reading culture, inspiring students to explore, engage, and develop a lifelong love for books"
+            title="New Academic Block"
+            description="Our state-of-the-art Academic Block is designed to elevate the learning experience. Spread across three floors, it houses spacious, well-lit classrooms, modern laboratories, and dedicated staff rooms. With lift access to all floors, the block ensures convenience and accessibility for all. A perfect blend of functionality and comfort for both students and faculty."
             imageUrl="/images/activityImages/activityImage1.png"
             className="lg:col-span-3 md:col-span-5 row-span-2 mt-56"
             gradientColor="#1A97A2"
@@ -82,10 +111,25 @@ function Innovations() {
             index={0} // From left
           />
           <FacilityCard
-            title="Auditorium"
-            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coaches.
-To support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. 
-"
+            title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
+            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coachesTo support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. "
+            subTitle=""
+            heading="Inaugurated and Blessed by"
+            subHeading="Shrimad Samyamindra Thirtha Swamiji, Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
+            subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
+            keyHighlights={[
+              "Seating Capacity: 2,000",
+              "Centrally Air-conditioned Environment",
+              "Expansive 2,900 sq.m Carpet Area",
+              "State-of-the-Art Acoustics",
+              "Uninterrupted Generator Power Supply",
+              "Ample Parking Facility",
+            ]}
+            additionalFeatures={[
+              "A/C Seminar Hall with 500-seat capacity, fully equipped with acoustics",
+              "Dedicated space for Start-up & Incubation Centre",
+            ]}
+            bottomDescription="A space built to inspire, connect, and celebrate — all under one roof."
             imageUrl="/images/activityImages/activityImage2.png"
             className="lg:col-span-3 md:col-span-5 row-span-1 top-32"
             gradientColor="#1A97A2"
@@ -93,8 +137,16 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             index={1} // From right
           />
           <FacilityCard
-            title="State-of-the-Art Labs"
-            description="At Manipal School, we enrich our students' learning experience by hosting State-of-the-Art Labs delivered by industry experts and academicians. These sessions provide valuable real-world perspectives, inspire critical thinking, and broaden students' horizons. Through interactive discussions and expert guidance, our students gain deeper insights into various fields, helping them make informed academic and career choices."
+            title="Research Labs"
+            keyHighlights={[
+              "Dedicated labs for AI & ML, IoT, CAED, CS and more",
+              "Centrally Air-conditioned Environment",
+              "Guided by experienced faculty and domain experts",
+              "Supports academic projects, funded research, and interdisciplinary collaboration",
+              "Open for student innovation, startup prototyping, and technical skill development",
+            ]}
+            bottomDescription="From ideation to real-world solutions, our labs empower you to turn ideas into impact."
+            description="Our state-of-the-art Research Labs are at the heart of academic discovery and innovation on campus. Designed to foster curiosity and creativity, these labs provide the perfect environment for students and faculty to explore, experiment, and excel."
             imageUrl="/images/activityImages/activityImage3.png"
             className="lg:col-span-3 md:col-span-5 row-span-2"
             gradientColor="#1A97A2"
@@ -103,7 +155,8 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
           />
           <FacilityCard
             title="Well-Equipped Classrooms"
-            description=" At Manipal School, we believe in nurturing socially responsible individuals by encouraging students to actively participate in outreach and community engagement programs. Through initiatives such as environmental drives, visits to orphanages and elderly homes, and awareness campaigns, students develop empathy, leadership, and a strong sense of civic responsibility. These experiences not only enrich their personal growth but also instill values of compassion and service, shaping them into responsible and compassionate individuals."
+            subTitle="Every classroom is a space where ideas thrive and interactions spark innovation"
+            description="Our classrooms are spacious, well-lit, and ergonomically designed to provide an ideal learning environment. Equipped with modern teaching aids such as projectors, smart boards, and high-speed internet, they ensure seamless integration of technology into everyday learning."
             imageUrl="/images/activityImages/activityImage4.png"
             className="lg:col-span-3 md:col-span-5 row-span-1 top-20"
             gradientColor="#1A97A2"
@@ -112,9 +165,16 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
           />
           <FacilityCard
             title="Expansive Library"
-            description=" Manipal School collaborates with MAHE (Manipal Academy of Higher Education) to provide students with exclusive career exposure and academic guidance. Through expert-led workshops, career counseling sessions, and interactive seminars, students gain insights into various professional fields and emerging career trends. This collaboration offers a unique opportunity for mentorship, skill development, and hands-on learning experiences, empowering students to make informed choices about their higher education and future careers."
+            description="47,000 volumes with 5,000+ unique titles, including physical and digital formats. Access to a wealth of e-books, e-journals, and educational videos through our VTUCN membership and digital subscriptions. Over 400+ e-magazines, 10,888 educational videos, and 90+ web content platforms. Access to 200+ international proceedings and 5 lakh+ educational materials through the National Digital Library. Subscriptions to 42 print journals, 16+ magazines, and 4 newspapers."
             imageUrl="/images/activityImages/activityImage5.png"
             className="lg:col-span-3 md:col-span-5 row-span-2 top-36"
+            keyHighlights={[
+              "47,000 volumes with 5,000+ unique titles in both physical and digital formats.",
+              "Access to a diverse collection of e-books, e-journals, and educational videos through our VTUCN membership and digital subscriptions.",
+              "Over 400+ e-magazines, 10,888 educational videos, and access to 90+ web content platforms.",
+              "Connectivity to 200+ international proceedings and a vast repository of 5 lakh+ educational materials through the National Digital Library.",
+              "Subscriptions to 42 print journals, 16+ magazines, and 4 newspapers, enriching academic resources for students.",
+            ]}
             gradientColor="#1A97A2"
             delay={0.5}
             index={4} // From left
@@ -131,13 +191,27 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 relative lg:hidden">
           <FacilityCard
-            title="New Admission Block"
-            description="Manipal School boasts well-stocked libraries that serve as vibrant learning hubs, offering a diverse collection of periodicals, journals, magazines, newsletters, encyclopedias, fiction, and reference books. Our libraries go beyond traditional reading by integrating structured learning programs, including phonics for early learners and literary classics for older students. We are committed to providing a rich reading culture, inspiring students to explore, engage, and develop a lifelong love for books"
-            imageUrl="/images/activityImages/activityImage1.png"
+            title="New Academic Block"
+            subTitle="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
+            heading="Inaugurated and Blessed by"
+            subHeading="Shrimad Samyamindra Thirtha Swamiji, Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
+            subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
+            description="Our state-of-the-art Academic Block is designed to elevate the learning experience. Spread across three floors, it houses spacious, well-lit classrooms, modern laboratories, and dedicated staff rooms. With lift access to all floors, the block ensures convenience and accessibility for all. A perfect blend of functionality and comfort for both students and faculty."
+            keyHighlights={[
+              "Seating Capacity: 2,000",
+              "Centrally Air-conditioned Environment",
+              "Expansive 2,900 sq.m Carpet Area",
+              "State-of-the-Art Acoustics",
+              "Uninterrupted Generator Power Supply",
+              "Ample Parking Facility",
+            ]}
+            additionalFeatures={[
+              "A/C Seminar Hall with 500-seat capacity, fully equipped with acoustics",
+              "Dedicated space for Start-up & Incubation Centre",
+            ]}
+            bottomDescription="A space built to inspire, connect, and celebrate — all under one roof."
             className="col-span-1"
-            gradientColor="#1A97A2"
-            delay={0.1}
-            index={0}
+            imageUrl="/images/activityImages/activityImage1.png"
           />
           <FacilityCard
             title="Auditorium"
@@ -170,16 +244,25 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
           />
           <FacilityCard
             title="Expansive Library"
-            description="Manipal School collaborates with MAHE (Manipal Academy of Higher Education) to provide students with exclusive career exposure and academic guidance. Through expert-led workshops, career counseling sessions, and interactive seminars, students gain insights into various professional fields and emerging career trends. This collaboration offers a unique opportunity for mentorship, skill development, and hands-on learning experiences, empowering students to make informed choices about their higher education and future careers."
+            description="47,000 volumes with 5,000+ unique titles, including physical and digital formats. Access to a wealth of e-books, e-journals, and educational videos through our VTUCN membership and digital subscriptions. Over 400+ e-magazines, 10,888 educational videos, and 90+ web content platforms. Access to 200+ international proceedings and 5 lakh+ educational materials through the National Digital Library. Subscriptions to 42 print journals, 16+ magazines, and 4 newspapers."
             imageUrl="/images/activityImages/activityImage5.png"
+            keyHighlights={[
+              "47,000 volumes with 5,000+ unique titles in both physical and digital formats.",
+              "Access to a diverse collection of e-books, e-journals, and educational videos through our VTUCN membership and digital subscriptions.",
+              "Over 400+ e-magazines, 10,888 educational videos, and access to 90+ web content platforms.",
+              "Connectivity to 200+ international proceedings and a vast repository of 5 lakh+ educational materials through the National Digital Library.",
+              "Subscriptions to 42 print journals, 16+ magazines, and 4 newspapers, enriching academic resources for students.",
+            ]}
             className="col-span-1"
             gradientColor="#1A97A2"
             delay={0.5}
             index={4}
           />
           <FacilityCard
-            title="Canteen"
-            description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
+            title="On-Campus Dining"
+            description="A student-friendly space to relax, recharge, and relish.
+Our hygienic and spacious canteens offer a wide variety of vegetarian and non-vegetarian options, catering to diverse tastes. Nutritious and freshly prepared meals are sourced from Prathignhya Café and Can Café - Hangyo, ensuring quality with every bite. It's more than just a meal—it's part of the Canara experience.
+"
             imageUrl="/images/activityImages/activityImage6.png"
             className="col-span-1"
             gradientColor="#1A97A2"

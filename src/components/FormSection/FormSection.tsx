@@ -35,14 +35,12 @@ const CounselingForm = () => {
       <div className="absolute bottom-[-10rem] left-0  right-0 h-1/4 bg-gradient-to-b from-transparent to-white opacity-90"></div>
     {/* Optional: Gradient layer behind the form */}
 
-      <div className="bg-white w-full max-w-7xl p-10 rounded-xl shadow-xl">
+      <div className="bg-white shadow-2xl w-full max-w-7xl p-10 rounded-xl shadow-xl">
         {/* Headings */}
-        <h2 className="text-center text-[#1A97A2] font-bold text-5xl mb-2">
+        <h2 className="text-center text-[#1A97A2] font-bold text-2xl md:text-3xl mb-2">
           Ready to Shape Your Future?
         </h2>
-        <h3 className="text-center text-black text-5xl font-semibold mb-8">
-          Book Your Counselling Session Today!
-        </h3>
+        
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">

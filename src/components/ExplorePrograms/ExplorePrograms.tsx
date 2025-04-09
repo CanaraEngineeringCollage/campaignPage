@@ -1,20 +1,16 @@
-"use client"
+"use client";
 
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel"
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 export default function ProgramsCarousel() {
-  const cards = programData.map((card, index) => (
-    <Card key={card.title} card={card} index={index} />
-  ))
+  const cards = programData.map((card, index) => <Card key={card.title} card={card} index={index} />);
 
   return (
     <div className="w-full h-full py-20 bg-[#F9FAFB]">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        Explore our programs
-      </h2>
+      <h2 className="max-w-7xl pl-4 mx-auto lg:text-[2rem] text-[1.5rem] xl:text-[2.5rem] md:text-[2.5rem] font-bold text-neutral-800 dark:text-neutral-200 font-sans">Explore our programs</h2>
       <Carousel items={cards} />
     </div>
-  )
+  );
 }
 
 // 👇 These are the actual program cards
@@ -43,7 +39,7 @@ const programData = [
     src: "/csd.png",
     content: <CardContent />,
   },
-]
+];
 
 // Reusable card content (can be empty or a "+" button, etc.)
 function CardContent() {
@@ -53,5 +49,5 @@ function CardContent() {
         <span className="text-2xl font-bold">+</span>
       </div>
     </div>
-  )
+  );
 }

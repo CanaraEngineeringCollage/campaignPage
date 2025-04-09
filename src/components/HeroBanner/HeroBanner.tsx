@@ -58,7 +58,7 @@ const HeroBanner = () => {
   return (
     <div className="min-h-screen">
       {/* Main Content with Background Image */}
-      <main className="relative min-h-screen flex  items-center justify-center">
+      <main className="relative h-[110vh] flex  items-center justify-center">
         {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Swiper
@@ -76,7 +76,11 @@ const HeroBanner = () => {
             modules={[Autoplay, Pagination]}
           >
             <SwiperSlide>
-              <Image src={websitebg1} alt="Students 1" className="w-full md:h-[89vh] md:object-cover object-cover" />
+              <div className="relative w-full h-[89vh]">
+                <Image src={websitebg1} alt="Students 1" fill className="object-cover sm:object-[30%_center] object-[15%_center]" />
+                {/* Gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-white via-transparent to-transparent z-10" />
+              </div>
             </SwiperSlide>
           </Swiper>
           <style jsx global>{`
@@ -89,7 +93,7 @@ const HeroBanner = () => {
         </div>
 
         {/* Form Container - Centered */}
-        <div className="relative container mx-auto mt-[10rem] md:mt-16 px-4 md:min-h-[90vh] flex justify-center md:justify-end items-start z-10">
+        <div className="relative md:flex hidden container mx-auto mt-[10rem] md:mt-16 px-4 md:min-h-[90vh]  justify-center md:justify-end items-start z-10">
           {/* Decorative Elements with Animations */}
 
           {/* Form Card with Scroll-Triggered Animation */}
@@ -126,7 +130,7 @@ const HeroBanner = () => {
                 type="email"
                 placeholder="Your Email"
                 {...register("parentEmail", { required: "Email is required" })}
-                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
+                className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
               {errors.parentEmail && <p className="text-red-500 text-sm">{errors.parentEmail.message}</p>}
 
@@ -134,7 +138,7 @@ const HeroBanner = () => {
                 type="tel"
                 placeholder="Your Phone Number"
                 {...register("parentPhone", { required: "Phone Number is required" })}
-                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
+                className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
               {errors.parentPhone && <p className="text-red-500 text-sm">{errors.parentPhone.message}</p>}
 

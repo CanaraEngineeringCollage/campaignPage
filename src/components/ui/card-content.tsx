@@ -14,6 +14,13 @@ interface CardContentProps {
   textColor?: string;
   headingColor?: string;
   className?: string;
+  subTitle?: string;
+  heading?: string;
+  subHeading?: string;
+  subDescription?: string;
+  bottomDescription?: string;
+  keyHighlights?: string[]; // ✅ Array of strings
+  additionalFeatures?: string[]; // ✅ Optional array of strings
 }
 
 export default function CardContent({
@@ -25,71 +32,107 @@ export default function CardContent({
   textColor = "text-neutral-600",
   headingColor = "text-neutral-700",
   className,
+  additionalFeatures,
+  bottomDescription,
+  heading,
+  keyHighlights,
+  subDescription,
+  subHeading,
+  subTitle,
 }: CardContentProps) {
   return (
     <motion.div
-      className={cn(backgroundColor, "p-8 md:p-14 rounded-3xl mb-4", className)}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          type: "spring",
-          damping: 15,
-        },
-      }}
-      whileHover={{
-        y: -5,
-        transition: { duration: 0.2 },
-      }}
-    >
-      {imageSrc && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delay: 0.4,
-              duration: 0.5,
-              type: "spring",
-              damping: 20,
-            },
-          }}
-        >
-          <Image
-            src={imageSrc || "/placeholder.svg"}
-            alt={imageAlt}
-            height={500}
-            width={900}
-            className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain rounded-2xl mb-6"
-          />
-        </motion.div>
-      )}
-      <motion.p className={cn(textColor, "dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto")}>
-        {title && (
-          <motion.span
-            className={cn("font-bold", headingColor, "dark:text-neutral-200")}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { delay: 0.2, duration: 0.3 },
-            }}
-          >
-            {title}
-          </motion.span>
-        )}{" "}
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 0.3, duration: 0.3 },
-          }}
-        >
-          {description}
-        </motion.span>
-      </motion.p>
-    </motion.div>
+    className={cn(backgroundColor, "md:p-14 rounded-3xl mb-4", className)}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        damping: 15,
+      },
+    }}
+    whileHover={{
+      y: -5,
+      transition: { duration: 0.2 },
+    }}
+  >
+    {/* Image */}
+    {imageSrc && (
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 0.4,
+            duration: 0.5,
+            type: "spring",
+            damping: 20,
+          },
+        }}
+      >
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          height={500}
+          width={900}
+          className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain rounded-2xl mb-6"
+        />
+      </motion.div>
+    )}
+
+    {/* Main Title + Description */}
+    <motion.p className={cn(textColor, "text-base md:text-2xl font-sans max-w-3xl mx-auto")}>
+      {title && <span className={cn("font-bold block", headingColor)}>{title}</span>}
+      {description}
+    </motion.p>
+
+    {/* SubTitle */}
+    {subTitle && <p className={cn("text-lg mt-4 font-semibold", headingColor)}>{subTitle}</p>}
+
+    {/* Heading */}
+    {heading && <p className={cn("text-lg mt-6 font-semibold", headingColor)}>{heading}</p>}
+
+    {/* Sub Heading */}
+    {subHeading && <p className={cn("text-base", textColor)}>{subHeading}</p>}
+
+    {/* Sub Description */}
+    {subDescription && <p className={cn("text-base mt-2", textColor)}>{subDescription}</p>}
+
+    {/* Key Highlights */}
+    {keyHighlights?.length > 0 && (
+      <div className="mt-6">
+        <h4 className={cn("text-lg font-semibold mb-2", headingColor)}>Key Highlights</h4>
+        <ul className="list-disc list-inside space-y-1 text-base">
+          {keyHighlights.map((point, index) => (
+            <li key={index} className={textColor}>
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {/* Additional Features */}
+    {additionalFeatures?.length > 0 && (
+      <div className="mt-6">
+        <h4 className={cn("text-lg font-semibold mb-2", headingColor)}>Additional Facilities</h4>
+        <ul className="list-disc list-inside space-y-1 text-base">
+          {additionalFeatures.map((feature, index) => (
+            <li key={index} className={textColor}>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {/* Bottom Description */}
+    {bottomDescription && (
+      <p className={cn("text-base mt-6 italic", textColor)}>{bottomDescription}</p>
+    )}
+  </motion.div>
   );
 }
