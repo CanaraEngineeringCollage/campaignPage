@@ -17,16 +17,23 @@ const FutureSection = () => {
           {/* Main content grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-20 lg:gap-16">
             {/* Image section */}
-            <motion.div
-              ref={imageRef}
-              initial={{ opacity: 0, x: -100 }} // Start off-screen to the left
-              whileInView={{ opacity: 1, x: 0 }} // Slide in to position
-              transition={{ duration: 0.5 }} // Animation duration
-              viewport={{ once: true }} // Trigger only once
-              className="relative z-0"
-            >
-              <Image src={studentImage} alt="Students in classroom" className="object-cover w-[100%] h-[100%] rounded-2xl z-0" />
-            </motion.div>
+            <div className="flex items-center justify-center h-full"> {/* Parent container */}
+  <motion.div
+    ref={imageRef}
+    initial={{ opacity: 0, x: -100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    className="relative z-0"
+  >
+    <Image
+      src={studentImage}
+      alt="Students in classroom"
+      className="object-cover w-full h-auto my-auto rounded-2xl z-0"
+    />
+  </motion.div>
+</div>
+
 
             {/* Content section */}
             <motion.div
