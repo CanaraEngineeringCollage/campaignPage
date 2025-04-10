@@ -55,9 +55,9 @@ const HeroBanner = () => {
   const isFormInView = useInView(formRef, { once: true });
 
   return (
-    <div className="h-[150vh]">
+    <div className=" mg:h-[150vh] h-[100vh]">
       {/* Main Content with Background Image */}
-      <main className="relative h-[150vh] flex  items-center justify-center">
+      <main className="relative mg:h-[150vh] h-[100vh] flex  items-center justify-center">
         {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Swiper
