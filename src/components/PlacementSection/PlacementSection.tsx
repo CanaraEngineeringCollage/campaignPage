@@ -91,7 +91,7 @@ const PlacementSection = () => {
                   alt="Success" 
                   width={500} 
                   height={100} 
-                  className="hidden md:flex object-cover z-0 absolute right-0 top-11 transform -translate-y-1/4" 
+                  className="hidden md:flex object-cover z-0 absolute right-0 top-11 xl:top-36 transform -translate-y-1/4" 
                   priority 
                 />
               </div>

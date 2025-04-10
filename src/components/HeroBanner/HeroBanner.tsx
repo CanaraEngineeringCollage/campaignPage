@@ -14,11 +14,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 interface FormData {
-  studentName: string;
-  parentEmail: string;
-  parentPhone: string;
-  class: string;
-  location: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  comments: string;
 }
 
 const HeroBanner = () => {
@@ -121,37 +120,37 @@ const HeroBanner = () => {
               <motion.input
                 type="text"
                 placeholder="Your Full Name"
-                {...register("studentName", { required: "Full Name is required" })}
+                {...register("fullName", { required: "Full Name is required" })}
                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
-              {errors.studentName && <p className="text-red-500 text-sm">{errors.studentName.message}</p>}
+              {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
 
               <motion.input
                 type="email"
                 placeholder="Your Email"
-                {...register("parentEmail", { required: "Email is required" })}
+                {...register("email", { required: "Email is required" })}
                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
-              {errors.parentEmail && <p className="text-red-500 text-sm">{errors.parentEmail.message}</p>}
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
               <motion.input
                 type="tel"
                 placeholder="Your Phone Number"
-                {...register("parentPhone", { required: "Phone Number is required" })}
+                {...register("phoneNumber", { required: "Phone Number is required" })}
                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
-              {errors.parentPhone && <p className="text-red-500 text-sm">{errors.parentPhone.message}</p>}
+              {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
 
               <motion.textarea
                 placeholder="Your Enquiry"
-                {...register("class", { required: "Enquiry is required", maxLength: 250 })}
+                {...register("comments", { required: "Enquiry is required", maxLength: 250 })}
                 rows={4}
                 maxLength={250}
                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
               <div className="flex justify-between text-xs text-gray-500 px-1">
-                <span>{errors.class?.message}</span>
-                <span>{watch("class")?.length || 0}/250</span>
+                <span>{errors.comments?.message}</span>
+                <span>{watch("comments")?.length || 0}/250</span>
               </div>
 
               <div className="flex justify-center">

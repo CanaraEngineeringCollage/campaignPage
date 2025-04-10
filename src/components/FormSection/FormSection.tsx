@@ -2,11 +2,12 @@
 
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 type FormData = {
   fullName: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   comments: string;
 };
 
@@ -24,10 +25,22 @@ const CounselingForm = () => {
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
-    console.log("Form Submitted:", data);
-    // Handle the submission (e.g., send to API)
-    reset();
+    const response = await fetch("/api/submit-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
     setLoading(false);
+    if (result.result === "success") {
+      toast.success("Form submitted successfully!");
+      reset(); // Clear the form fields after submission
+    } else {
+      toast.error("Error submitting form.");
+    }
   };
 
   return (
@@ -64,7 +77,7 @@ const CounselingForm = () => {
             <input
               type="tel"
               placeholder="Your Phone Number"
-              {...register("phone", { required: true })}
+              {...register("phoneNumber", { required: true })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
             />
           </div>
