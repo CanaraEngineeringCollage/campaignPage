@@ -131,7 +131,7 @@ const PlacementSection = () => {
             {/* Static Middle Card (Card 2) */}
             <div className="p-6 bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] rounded-xl shadow-md text-center">
               <h3 className="text-[60px] font-bold">86%+</h3>
-              <p className="mt-2 text-sm text-white/90">Consistently Strong Placements CEC graduates placed over the last three years</p>
+              <p className="mt-2 text-xl text-white/90">Consistently Strong Placements CEC graduates placed over the last three years</p>
             </div>
 
             {/* Right Swiper (Card 3) */}

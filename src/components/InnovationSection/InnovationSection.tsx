@@ -193,11 +193,18 @@ function Innovations() {
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 relative lg:hidden">
           <FacilityCard
             title="New Academic Block"
-            subTitle="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
+            description="Our state-of-the-art Academic Block is designed to elevate the learning experience. Spread across three floors, it houses spacious, well-lit classrooms, modern laboratories, and dedicated staff rooms. With lift access to all floors, the block ensures convenience and accessibility for all. A perfect blend of functionality and comfort for both students and faculty."
+            className="col-span-1"
+            imageUrl="/images/activityImages/activityImage1.png"
+            gradientColor="#1A97A2"
+          />
+          <FacilityCard
+            title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
+            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coachesTo support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. "
+            subTitle=""
             heading="Inaugurated and Blessed by"
             subHeading="Shrimad Samyamindra Thirtha Swamiji, Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
             subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
-            description="Our state-of-the-art Academic Block is designed to elevate the learning experience. Spread across three floors, it houses spacious, well-lit classrooms, modern laboratories, and dedicated staff rooms. With lift access to all floors, the block ensures convenience and accessibility for all. A perfect blend of functionality and comfort for both students and faculty."
             keyHighlights={[
               "Seating Capacity: 2,000",
               "Centrally Air-conditioned Environment",
@@ -211,14 +218,6 @@ function Innovations() {
               "Dedicated space for Start-up & Incubation Centre",
             ]}
             bottomDescription="A space built to inspire, connect, and celebrate — all under one roof."
-            className="col-span-1"
-            imageUrl="/images/activityImages/activityImage1.png"
-          />
-          <FacilityCard
-            title="Auditorium"
-            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coaches.
-To support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. 
-"
             imageUrl="/images/activityImages/activityImage2.png"
             className="col-span-1"
             gradientColor="#1A97A2"
@@ -226,8 +225,16 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             index={1}
           />
           <FacilityCard
-            title="State-of-the-Art Labs"
-            description="At Manipal School, we enrich our students' learning experience by hosting State-of-the-Art Labs delivered by industry experts and academicians. These sessions provide valuable real-world perspectives, inspire critical thinking, and broaden students' horizons. Through interactive discussions and expert guidance, our students gain deeper insights into various fields, helping them make informed academic and career choices."
+            title="Research Labs"
+            keyHighlights={[
+              "Dedicated labs for AI & ML, IoT, CAED, CS and more",
+              "Centrally Air-conditioned Environment",
+              "Guided by experienced faculty and domain experts",
+              "Supports academic projects, funded research, and interdisciplinary collaboration",
+              "Open for student innovation, startup prototyping, and technical skill development",
+            ]}
+            bottomDescription="From ideation to real-world solutions, our labs empower you to turn ideas into impact."
+            description="Our state-of-the-art Research Labs are at the heart of academic discovery and innovation on campus. Designed to foster curiosity and creativity, these labs provide the perfect environment for students and faculty to explore, experiment, and excel."
             imageUrl="/images/activityImages/activityImage3.png"
             className="col-span-1"
             gradientColor="#1A97A2"
@@ -236,7 +243,8 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
           />
           <FacilityCard
             title="Well-Equipped Classrooms"
-            description="At Manipal School, we believe in nurturing socially responsible individuals by encouraging students to actively participate in outreach and community engagement programs. Through initiatives such as environmental drives, visits to orphanages and elderly homes, and awareness campaigns, students develop empathy, leadership, and a strong sense of civic responsibility. These experiences not only enrich their personal growth but also instill values of compassion and service, shaping them into responsible and compassionate individuals."
+            bottomDescription="Every classroom is a space where ideas thrive and interactions spark innovation"
+            description="Our classrooms are spacious, well-lit, and ergonomically designed to provide an ideal learning environment. Equipped with modern teaching aids such as projectors, smart boards, and high-speed internet, they ensure seamless integration of technology into everyday learning."
             imageUrl="/images/activityImages/activityImage4.png"
             className="col-span-1"
             gradientColor="#1A97A2"

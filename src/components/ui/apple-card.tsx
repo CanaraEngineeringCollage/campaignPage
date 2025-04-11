@@ -173,7 +173,7 @@ export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gr
           initial={{ opacity: 0.7 }}
         />
         <motion.div className="absolute  bottom-4 z-100 text-center w-full">
-          <motion.p className="text-white text-xl md:text-2xl font-bold px-6 mt-2">{title}</motion.p>
+          <motion.p className="text-white text-2xl md:text-2xl font-bold px-6 mt-2">{title}</motion.p>
         </motion.div>
         <BlurImage
           src={imageSrc}

@@ -51,7 +51,7 @@ const Footer = () => {
   });
   return (
     <div className="relative flex flex-col items-center bg-[linear-gradient(to_bottom,white_50%,#156A7E_50%)] min-h-[100vh]">
-      <div className="relative z-10  p-8 md:py-24 rounded-lg shadow-2xl xl:max-w-7xl w-full lg:max-w-4xl bg-white mt-[30vh] mb-10 md:mb-20">
+      <div className="relative z-10  p-8 md:py-24 rounded-lg shadow-2xl xl:max-w-7xl w-full lg:max-w-4xl bg-white mt-[5vh] lg:mt-[30vh] mb-10 md:mb-20">
         <h2 className="text-center text-[#1A97A2] font-semibold xl:text-[2.5rem] lg:text-[2rem]">
           Ready to Shape a Future Innovator
         </h2>
@@ -60,56 +60,83 @@ const Footer = () => {
         </h3>
 
         <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7"
-        >
-          <input
-            type="text"
-            placeholder="Your Full Name"
-            {...register("fullName", {
-              required: "Your Full Name is required",
-            })}
-            className="w-full px-1 pb-[7px] md:col-span-2 text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
-          />
-          {errors.fullName && (
-            <p className="text-red-500 text-sm">{errors.fullName.message}</p>
-          )}
-          <input
-            type="tel"
-            placeholder="You Phone Number"
-            {...register("phoneNumber", { required: "Your Phone is required" })}
-            className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
-          />
-          {errors.phoneNumber && (
-            <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
-          )}
-          <input
-            type="email"
-            placeholder="Your Email"
-            {...register("email", { required: "Email is required" })}
-            className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
-          )}
-           <motion.textarea
-                placeholder="Your Enquiry"
-                {...register("comments", { required: "Enquiry is required", maxLength: 250 })}
-                rows={4}
-                maxLength={250}
-                className="w-full border-b md:col-span-2 border-gray-300 focus:outline-none text-lg py-2"
-              />
-              <div className="flex justify-between md:col-span-2 text-xs text-gray-500 px-1">
-                <span>{errors.comments?.message}</span>
-                <span>{watch("comments")?.length || 0}/250</span>
-              </div>
-          <button
-            type="submit"
-            className="bg-[#1A97A2] md:col-span-2 mx-auto cursor-pointer text-white py-2 mt-12 px-6 rounded-3xl font-bold text-2xl flex items-center justify-center"
-          >
-            {loading ? "Submitting..." : "Submit"}
-          </button>
-        </form>
+  onSubmit={handleSubmit(onSubmit)}
+  className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7"
+>
+  {/* Full Name */}
+  <div className="md:col-span-2">
+    <input
+      type="text"
+      placeholder="Your Full Name"
+      {...register("fullName", {
+        required: "Your Full Name is required",
+      })}
+      className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
+    />
+    {errors.fullName && (
+      <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
+    )}
+  </div>
+
+  {/* Phone Number */}
+  <div>
+    <input
+      type="tel"
+      placeholder="Your Phone Number"
+      {...register("phoneNumber", {
+        required: "Your Phone is required",
+      })}
+      className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
+    />
+    {errors.phoneNumber && (
+      <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
+    )}
+  </div>
+
+  {/* Email */}
+  <div>
+    <input
+      type="email"
+      placeholder="Your Email"
+      {...register("email", { required: "Email is required" })}
+      className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
+    />
+    {errors.email && (
+      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+    )}
+  </div>
+
+  {/* Comments */}
+  <div className="md:col-span-2">
+    <motion.textarea
+      placeholder="Your Enquiry"
+      {...register("comments", {
+        required: "Enquiry is required",
+        maxLength: 250,
+      })}
+      rows={4}
+      maxLength={250}
+      className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
+    />
+    <div className="flex justify-between text-xs text-gray-500 px-1 mt-1">
+      <span className="text-red-500 text-sm">
+        {errors.comments?.message}
+      </span>
+      <span>{watch("comments")?.length || 0}/250</span>
+    </div>
+  </div>
+
+  {/* Submit Button */}
+  <div className="md:col-span-2">
+    <button
+      type="submit"
+      className="bg-[#1A97A2] mx-auto cursor-pointer text-white py-2 mt-12 px-6 rounded-3xl font-bold text-2xl flex items-center justify-center"
+    >
+      {loading ? "Submitting..." : "Submit"}
+    </button>
+  </div>
+</form>
+
       </div>
       <div className="w-full hidden md:block bg-[#156A7E] text-white p-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">

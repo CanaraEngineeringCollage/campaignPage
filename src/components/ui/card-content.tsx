@@ -91,28 +91,28 @@ export default function CardContent({
           transition: { delay: 0.1, duration: 0.3 },
         }}
       >
-        <motion.p className="text-2xl md:text-4xl pl-8  font-semibold text-neutral-700 mt-4 dark:text-white">{title}</motion.p>
+        <motion.p className="text-2xl md:text-4xl px-8  font-semibold text-neutral-700 mt-4 dark:text-white">{title}</motion.p>
       </motion.div>
       {/* Main Title + Description */}
-      <motion.p className={cn(textColor, "text-base pt-2 md:text-xl font-sans max-w-3xl pl-8")}>{description}</motion.p>
+      <motion.p className={cn(textColor, "text-base pt-2 md:text-xl font-sans max-w-3xl px-8")}>{description}</motion.p>
 
       {/* SubTitle */}
-      {subTitle && <p className={cn("text-lg mt-4 pl-8 font-semibold", headingColor)}>{subTitle}</p>}
+      {subTitle && <p className={cn("text-lg mt-4 px-8 font-semibold", headingColor)}>{subTitle}</p>}
 
       {/* Heading */}
-      {heading && <p className={cn("text-lg mt-6 pl-8 font-semibold", headingColor)}>{heading}</p>}
+      {heading && <p className={cn("text-lg mt-6 px-8 font-semibold", headingColor)}>{heading}</p>}
 
       {/* Sub Heading */}
-      {subHeading && <p className={cn("text-base pl-8", textColor)}>{subHeading}</p>}
+      {subHeading && <p className={cn("text-base px-8", textColor)}>{subHeading}</p>}
 
       {/* Sub Description */}
-      {subDescription && <p className={cn("text-base pl-8 mt-2", textColor)}>{subDescription}</p>}
+      {subDescription && <p className={cn("text-base px-8 mt-2", textColor)}>{subDescription}</p>}
 
       {/* Key Highlights */}
       {keyHighlights?.length > 0 && (
         <div className="mt-6">
-          <h4 className={cn("text-lg pl-8 font-semibold mb-2", headingColor)}>Key Highlights</h4>
-          <ul className="list-disc pl-8 list-inside space-y-1 text-base">
+          <h4 className={cn("text-lg px-8 font-semibold mb-2", headingColor)}>Key Highlights</h4>
+          <ul className="list-disc px-8 list-inside space-y-1 text-base">
             {keyHighlights.map((point, index) => (
               <li key={index} className={textColor}>
                 {point}
@@ -124,7 +124,7 @@ export default function CardContent({
 
       {/* Additional Features */}
       {additionalFeatures?.length > 0 && (
-        <div className="mt-6 pl-8">
+        <div className="mt-6 px-8">
           <h4 className={cn("text-lg font-semibold mb-2", headingColor)}>Additional Facilities</h4>
           <ul className="list-disc list-inside space-y-1 text-base">
             {additionalFeatures.map((feature, index) => (
@@ -137,7 +137,7 @@ export default function CardContent({
       )}
 
       {/* Bottom Description */}
-      {bottomDescription && <p className={cn("text-base mt-6 pl-8 italic", textColor)}>{bottomDescription}</p>}
+      {bottomDescription && <p className={cn("text-base mt-6 px-8 italic", textColor)}>{bottomDescription}</p>}
     </motion.div>
   );
 }

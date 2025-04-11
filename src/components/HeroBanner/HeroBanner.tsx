@@ -14,6 +14,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
+import { ClipLoader } from "react-spinners";
 interface FormData {
   fullName: string;
   email: string;
@@ -80,7 +81,7 @@ const HeroBanner = () => {
                 <Image src={websitebg1} alt="Students 1" fill className="object-cover hidden md:block" />
                 <Image src={websitebg2} alt="Students 1" fill className="object-cover md:hidden sm:block block" />
                 {/* Gradient overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-[200px] md:hidden md:h-[1000px] bg-gradient-to-t from-white via-white/80 via-60% to-transparent z-[100]" />
+                <div className="absolute bottom-0 left-0 right-0 h-[200px] md:hidden md:h-[1000px] bg-gradient-to-t from-white via-white/85 via-50% to-transparent z-[100]" />
 
                 <div className="absolute bottom-0 md:block hidden left-0 right-0 h-[500px] md:h-[1000px] bg-gradient-to-t from-white via-transparent to-transparent z-100" />
                 {/* <div className="absolute bottom-0 left-0 md:hidden block right-0 h-[6px] ] bg-[linear-gradient(to_top,_white_60%,_transparent_100%)] z-[10]" /> */}
@@ -155,9 +156,9 @@ const HeroBanner = () => {
                 maxLength={250}
                 className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
               />
-              <div className="flex justify-between text-xs text-gray-500 px-1">
+              <div className="flex justify-between text-red-500 text-sm px-1">
                 <span>{errors.comments?.message}</span>
-                <span>{watch("comments")?.length || 0}/250</span>
+                <span className="text-gray-500">{watch("comments")?.length || 0}/250</span>
               </div>
 
               <div className="flex justify-center">
@@ -167,7 +168,7 @@ const HeroBanner = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#1AA5A1] text-white px-8 py-2 rounded-full font-semibold text-lg"
                 >
-                  {loading ? "Submitting..." : "Submit"}
+                  {loading ? <ClipLoader size={24} color="#fff" className="mt-2" /> : "Apply"}
                 </motion.button>
               </div>
             </form>
