@@ -45,7 +45,7 @@ const FutureSection = () => {
               className="relative md:px-4 lg:px-8 flex items-center justify-center"
             >
               <div className="relative z-10 space-y-6  flex-col flex">
-                <h1 className="lg:text-[2rem] text-[1.5rem] lg:text-[45px] md:text-[2.5rem] font-semibold text-black leading-tight">
+                <h1 className=" text-[1.5rem] lg:text-[45px] md:text-[2.5rem] font-semibold text-black leading-tight">
                   Your Future Campus
                 </h1>
                 <div className="space-y-4 text-gray-600">
