@@ -60,7 +60,7 @@ const logos = [
 
 const PlacementSection = () => {
   return (
-    <section className="relative min-h-[160vh] text-white py-12 px-6 md:px-12 overflow-hidden ">
+    <section className="relative min-h-[100vh] md:min-h-[160vh] text-white py-12 px-6 md:px-12 overflow-hidden ">
       {/* Add custom styles */}
       <style jsx global>
         {swiperStyles}
@@ -69,10 +69,10 @@ const PlacementSection = () => {
       {/* Background Image */}
       <Image src="/texturedBackground.png" alt="Background" fill className="object-cover z-0" priority />
       {/* Content */}
-      <div className="flex items-center justify-center min-h-[160vh]">
+      <div className="flex items-center justify-center min-h-[60vh] md:min-h-[160vh]">
         <div className="relative z-20 max-w-7xl items-center mx-auto space-y-10 min-h-screen flex flex-col justify-center">
           {/* Heading */}
-          <div className="w-[100%] bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] p-6 rounded-xl shadow-lg">
+          <div className="w-[100%] hidden md:block bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] p-6 rounded-xl shadow-lg">
             <div className="flex flex-col md:flex-row justify-between items-start gap-8">
               <div className="flex-1 mt-8 ml-4 mb-8">
                 <h2 className="xl:text-[2.5rem] md:text-[2.5rem] text-[1.5rem] lg:text-[2rem] md:leading-10 leading-7 md:text-4xl font-bold mb-2 ">
@@ -91,7 +91,7 @@ const PlacementSection = () => {
                   alt="Success" 
                   width={500} 
                   height={100} 
-                  className="hidden md:flex object-cover z-0 absolute right-0 top-11 xl:top-36 transform -translate-y-1/4" 
+                  className="future hidden md:flex object-cover z-0 absolute right-0 top-11 !lg:top-20 2xl:top-36 transform -translate-y-1/4" 
                   priority 
                 />
               </div>
@@ -131,7 +131,7 @@ const PlacementSection = () => {
             {/* Static Middle Card (Card 2) */}
             <div className="p-6 bg-gradient-to-br from-[#6dc9d1] to-[#1A97A2] rounded-xl shadow-md text-center">
               <h3 className="text-[60px] font-bold">86%+</h3>
-              <p className="mt-2 text-sm text-white/90">Consistently Strong Placements CEC graduates placed over the last three years</p>
+              <p className="mt-2 text-xl text-white/90">Consistently Strong Placements CEC graduates placed over the last three years</p>
             </div>
 
             {/* Right Swiper (Card 3) */}

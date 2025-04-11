@@ -144,3 +144,12 @@ lite-youtube {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+  .future {
+
+   top: 14px; /* Adjusted to a more readable size */
+  }
+}
