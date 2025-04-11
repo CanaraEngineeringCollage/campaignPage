@@ -23,9 +23,9 @@ export default function Home() {
       <section>
         <FutureSection/>
       </section>
-      <section>
+      {/* <section>
         <CampusWalkThrough/>
-      </section>
+      </section> */}
       <section>
         <ProgramsCarousel/>
       </section>

@@ -123,14 +123,26 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <IconMathLower className="h-6 w-4 text-gray-500" />
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.555 3.21044L3.614 9.13244L9.5181 15.0924C10.101 15.6814 10.0981 16.6304 9.5091 17.2134C9.2171 17.5034 8.8351 17.6484 8.4531 17.6484C8.0671 17.6484 7.6811 17.5004 7.3881 17.2044L0.431099 10.1824C-0.150901 9.59444 -0.148901 8.64844 0.437099 8.06444L7.4371 1.08644C8.0221 0.501439 8.9741 0.502439 9.5581 1.08944C10.1431 1.67644 10.141 2.62644 9.555 3.21044Z"
+                fill="black"
+                fillOpacity="0.56"
+              />
+            </svg>
           </button>
           <button
             className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <IconMathGreater className="h-6 w-5 text-gray-500" />
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.55853 7.86717C10.1445 8.45117 10.1465 9.39717 9.56453 9.98517L2.60753 17.0072C2.31453 17.3032 1.92853 17.4512 1.54253 17.4512C1.16053 17.4512 0.778527 17.3062 0.486527 17.0162C-0.102473 16.4332 -0.105473 15.4842 0.477527 14.8952L6.38163 8.93517L0.440627 3.01317C-0.145373 2.42917 -0.147373 1.47907 0.437627 0.892173C1.02163 0.305173 1.97363 0.304173 2.55863 0.889173L9.55853 7.86717Z"
+                fill="black"
+                fillOpacity="0.56"
+              />
+            </svg>
           </button>
         </div>
       </div>

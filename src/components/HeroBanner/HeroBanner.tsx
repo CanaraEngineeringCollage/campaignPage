@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion"; // Import Framer Motion
 import { toast } from "react-hot-toast";
 import { useState } from "react";
 import websitebg1 from "../../../public/bg2.png";
+import websitebg2 from "../../../public/mobilebg.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -55,9 +56,9 @@ const HeroBanner = () => {
   const isFormInView = useInView(formRef, { once: true });
 
   return (
-    <div className=" mg:h-[150vh] h-[100vh]">
+    <div className=" md:h-[150vh] h-[70vh]">
       {/* Main Content with Background Image */}
-      <main className="relative mg:h-[150vh] h-[100vh] flex  items-center justify-center">
+      <main className="relative md:h-[150vh] h-[70vh] flex  items-center justify-center">
         {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Swiper
@@ -76,9 +77,13 @@ const HeroBanner = () => {
           >
             <SwiperSlide>
               <div className="relative w-full h-full">
-                <Image src={websitebg1} alt="Students 1" fill className="object-cover sm:object-[30%_center] object-[15%_center]" />
+                <Image src={websitebg1} alt="Students 1" fill className="object-cover hidden md:block" />
+                <Image src={websitebg2} alt="Students 1" fill className="object-cover md:hidden sm:block block" />
                 {/* Gradient overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-white via-transparent to-transparent z-10" />
+                <div className="absolute bottom-0 md:block hiddem left-0 right-0 h-[500px] md:h-[1000px] bg-gradient-to-t from-white via-transparent to-transparent z-100" />
+                {/* <div className="absolute bottom-0 left-0 md:hidden block right-0 h-[6px] ] bg-[linear-gradient(to_top,_white_60%,_transparent_100%)] z-[10]" /> */}
+
+
               </div>
             </SwiperSlide>
           </Swiper>
