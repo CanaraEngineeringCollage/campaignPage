@@ -87,7 +87,7 @@ function Innovations() {
 
   return (
     <div className="min-h-screen relative overflow-hidden" ref={sectionRef}>
-      <div className="max-w-7xl xl:mx-auto mx-8">
+      <div className="max-w-7xl lg:mx-auto xl:mx-auto mx-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: isSectionInView ? 1 : 0, y: isSectionInView ? 0 : -50 }}
@@ -184,7 +184,7 @@ function Innovations() {
             title="Canteen"
             description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
             imageUrl="/images/activityImages/Image6.png"
-            className="lg:col-span-4 md:col-span-5 object-cover lg:max-w-[230px] row-span-2 xl:max-w-[310px] top-[-13rem]"
+            className="lg:col-span-4 md:col-span-5 object-cover lg:max-w-[310px] row-span-2 xl:max-w-[310px] top-[-13rem]"
             gradientColor="#1A97A2"
             delay={0.6}
             index={5} // From right
