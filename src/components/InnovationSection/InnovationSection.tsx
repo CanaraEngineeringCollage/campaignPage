@@ -73,6 +73,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({
             backgroundColor=""
             textColor="text-neutral-600"
             headingColor="text-neutral-700"
+            title={title}
           />
         }
       />
@@ -104,7 +105,7 @@ function Innovations() {
           <FacilityCard
             title="New Academic Block"
             description="Our state-of-the-art Academic Block is designed to elevate the learning experience. Spread across three floors, it houses spacious, well-lit classrooms, modern laboratories, and dedicated staff rooms. With lift access to all floors, the block ensures convenience and accessibility for all. A perfect blend of functionality and comfort for both students and faculty."
-            imageUrl="/images/activityImages/activityImage1.png"
+            imageUrl="/images/activityImages/Image1.png"
             className="lg:col-span-3 md:col-span-5 row-span-2 mt-56"
             gradientColor="#1A97A2"
             delay={0.1}
@@ -130,7 +131,7 @@ function Innovations() {
               "Dedicated space for Start-up & Incubation Centre",
             ]}
             bottomDescription="A space built to inspire, connect, and celebrate — all under one roof."
-            imageUrl="/images/activityImages/activityImage2.png"
+            imageUrl="/images/activityImages/Image2.png"
             className="lg:col-span-3 md:col-span-5 row-span-1 top-32"
             gradientColor="#1A97A2"
             delay={0.2}
@@ -147,7 +148,7 @@ function Innovations() {
             ]}
             bottomDescription="From ideation to real-world solutions, our labs empower you to turn ideas into impact."
             description="Our state-of-the-art Research Labs are at the heart of academic discovery and innovation on campus. Designed to foster curiosity and creativity, these labs provide the perfect environment for students and faculty to explore, experiment, and excel."
-            imageUrl="/images/activityImages/activityImage3.png"
+            imageUrl="/images/activityImages/Image3.png"
             className="lg:col-span-3 md:col-span-5 row-span-2"
             gradientColor="#1A97A2"
             delay={0.3}
@@ -157,7 +158,7 @@ function Innovations() {
             title="Well-Equipped Classrooms"
             subTitle="Every classroom is a space where ideas thrive and interactions spark innovation"
             description="Our classrooms are spacious, well-lit, and ergonomically designed to provide an ideal learning environment. Equipped with modern teaching aids such as projectors, smart boards, and high-speed internet, they ensure seamless integration of technology into everyday learning."
-            imageUrl="/images/activityImages/activityImage4.png"
+            imageUrl="/images/activityImages/Image4.png"
             className="lg:col-span-3 md:col-span-5 row-span-1 top-20"
             gradientColor="#1A97A2"
             delay={0.4}
@@ -166,7 +167,7 @@ function Innovations() {
           <FacilityCard
             title="Expansive Library"
             description="47,000 volumes with 5,000+ unique titles, including physical and digital formats. Access to a wealth of e-books, e-journals, and educational videos through our VTUCN membership and digital subscriptions. Over 400+ e-magazines, 10,888 educational videos, and 90+ web content platforms. Access to 200+ international proceedings and 5 lakh+ educational materials through the National Digital Library. Subscriptions to 42 print journals, 16+ magazines, and 4 newspapers."
-            imageUrl="/images/activityImages/activityImage5.png"
+            imageUrl="/images/activityImages/Image5.png"
             className="lg:col-span-3 md:col-span-5 row-span-2 top-36"
             keyHighlights={[
               "47,000 volumes with 5,000+ unique titles in both physical and digital formats.",
@@ -182,8 +183,8 @@ function Innovations() {
           <FacilityCard
             title="Canteen"
             description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
-            imageUrl="/images/activityImages/activityImage6.png"
-            className="lg:col-span-4 md:col-span-5 lg:max-w-[230px] row-span-2 xl:max-w-[310px] top-[-13rem]"
+            imageUrl="/images/activityImages/Image6.png"
+            className="lg:col-span-4 md:col-span-5 object-cover lg:max-w-[230px] row-span-2 xl:max-w-[310px] top-[-13rem]"
             gradientColor="#1A97A2"
             delay={0.6}
             index={5} // From right

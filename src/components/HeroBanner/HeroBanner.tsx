@@ -80,7 +80,9 @@ const HeroBanner = () => {
                 <Image src={websitebg1} alt="Students 1" fill className="object-cover hidden md:block" />
                 <Image src={websitebg2} alt="Students 1" fill className="object-cover md:hidden sm:block block" />
                 {/* Gradient overlay */}
-                <div className="absolute bottom-0 md:block hiddem left-0 right-0 h-[500px] md:h-[1000px] bg-gradient-to-t from-white via-transparent to-transparent z-100" />
+                <div className="absolute bottom-0 left-0 right-0 h-[200px] md:hidden md:h-[1000px] bg-gradient-to-t from-white via-white/80 via-60% to-transparent z-[100]" />
+
+                <div className="absolute bottom-0 md:block hidden left-0 right-0 h-[500px] md:h-[1000px] bg-gradient-to-t from-white via-transparent to-transparent z-100" />
                 {/* <div className="absolute bottom-0 left-0 md:hidden block right-0 h-[6px] ] bg-[linear-gradient(to_top,_white_60%,_transparent_100%)] z-[10]" /> */}
 
 
