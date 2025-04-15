@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { ClipLoader } from "react-spinners";
 
 interface FormData {
   fullName: string;
@@ -116,7 +117,11 @@ const Footer = () => {
               type="submit"
               className="bg-[#1A97A2] mx-auto cursor-pointer text-white py-2 mt-12 px-6 rounded-3xl font-bold text-2xl flex items-center justify-center"
             >
-              {loading ? "Submitting..." : "Submit"}
+            {loading ? (
+                  <ClipLoader size={24} color="#fff" className="mt-2" />
+                ) : (
+                  "Apply"
+                )}
             </button>
           </div>
         </form>
