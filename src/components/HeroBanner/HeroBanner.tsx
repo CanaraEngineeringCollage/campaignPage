@@ -101,7 +101,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Form Container - Positioned on the Right */}
-      <div className="relative container mx-auto h-full max-w-[1350px]  z-20 flex items-center justify-end md:min-h-[90vh]">
+      <div className="relative  container mx-auto h-full max-w-[1350px]  z-20 hidden md:flex items-center justify-end md:min-h-[90vh]">
         <motion.div
           ref={formRef}
           initial={{ opacity: 0, x: 50 }} // Slide in from right
