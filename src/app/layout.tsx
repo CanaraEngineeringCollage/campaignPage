@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import WhatsappChatWidget from "@/components/WhatsappChatWidget";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Canara Engineering College",
     images: [
       {
-        url: "https://applycanara.vercel.app/bg2.png", // from public/bg.png
+        url: "https://applycanara.vercel.app/bg2.png",
         width: 1200,
         height: 630,
         alt: "Canara Engineering College Admissions 2025",
@@ -45,7 +46,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,12 +53,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5WTGB2QQ');
+          `}
+        </Script>
+        {/* End Google Tag Manager */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         
-        <Navbar/>
-          <Toaster position="top-right" />
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5WTGB2QQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
+        <Navbar />
+        <Toaster position="top-right" />
         {children}
         <WhatsappChatWidget />
       </body>
