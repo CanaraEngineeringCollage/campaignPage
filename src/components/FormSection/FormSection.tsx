@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { ClipLoader } from 'react-spinners';
+import { useRouter } from 'next/navigation';
 
 type FormData = {
   fullName: string;
@@ -30,31 +31,24 @@ const CounselingForm = () => {
 
   const [loading, setLoading] = useState(false);
   const commentValue = watch('comments') || '';
-
+  const router = useRouter();
   const onSubmit = async (data: FormData) => {
     setLoading(true);
-    try {
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+    const response = await fetch("https://applycanara.vercel.app/api/submit-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-      const result = await response.json();
-      setLoading(false);
-      if (result.result === 'success') {
-        toast.success('Form submitted successfully!');
-        reset();
-      } else {
-        toast.error('Error submitting form.');
-      }
-    } catch (error) {
-      setLoading(false);
-      toast.error('Error submitting form.');
+    const result = await response.json();
+    if (result.result === "success") {
+      router.push("/thank-you");
+    } else {
+      toast.error("Error submitting form.");
     }
-  };
+  }
 
   return (
     <div className="flex justify-center mt-[-10px] bg-gradient-to-b from-white to-transparent opacity-90">

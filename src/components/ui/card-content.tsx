@@ -79,7 +79,7 @@ export default function CardContent({
             alt={imageAlt}
             height={500}
             width={900}
-            className="md:w-[100vw] md:h-[100vh] h-full w-full mx-auto object-cover  mb-6"
+            className="md:w-[100vw] md:h-[60vh] h-full w-full mx-auto object-cover  mb-12"
           />
         </motion.div>
       )}

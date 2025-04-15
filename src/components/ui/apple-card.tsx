@@ -11,13 +11,14 @@ type CardProps = {
   imageAlt: string;
   content: React.ReactNode;
   gradientColor?: string;
+  centering?:string;
 };
 
 export const BlurImage = ({ height, width, src, className, alt, ...rest }: ImageProps) => {
   const [isLoading, setLoading] = useState(true);
   return (
     <Image
-      className={cn("transition duration-300", isLoading ? "blur-sm" : "blur-0", className)}
+      className={cn("transition duration-300 h-[50px]", isLoading ? "blur-sm" : "blur-0", className)}
       onLoad={() => setLoading(false)}
       src={src || "/placeholder.svg"}
       width={width}
@@ -31,7 +32,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }: Image
   );
 };
 
-export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gradientColor = "rgba(0,0,0,0.8)" }: CardProps) {
+export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gradientColor = "rgba(0,0,0,0.8)", centering }: CardProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -179,7 +180,7 @@ export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gr
           src={imageSrc}
           alt={imageAlt || title || "Card image"}
           fill
-          className="absolute object-cover z-10 inset-0 transition-transform duration-700 ease-in-out"
+          className={`absolute object-cover z-10 inset-0 transition-transform duration-700 ease-in-out ${centering}`}
         />
       </motion.button>
     </>

@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 import { ClipLoader } from "react-spinners";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   fullName: string;
@@ -32,10 +33,10 @@ const HeroBanner = () => {
     formState: { errors },
   } = useForm<FormData>();
   const [loading, setLoading] = useState(false);
-
+  const router = useRouter();
   const onSubmit = async (data: FormData) => {
     setLoading(true);
-    const response = await fetch("/api/submit-form", {
+    const response = await fetch("https://applycanara.vercel.app/api/submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,15 +45,12 @@ const HeroBanner = () => {
     });
 
     const result = await response.json();
-    setLoading(false);
     if (result.result === "success") {
-      toast.success("Form submitted successfully!");
-      reset();
+      router.push("/thank-you");
     } else {
       toast.error("Error submitting form.");
     }
-  };
-
+  }
   const formRef = useRef(null);
   const isFormInView = useInView(formRef, { once: true });
 

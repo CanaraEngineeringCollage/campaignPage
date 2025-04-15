@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -30,33 +30,6 @@ const swiperStyles = `
   }
 `;
 
-const stats = [
-  {
-    value: "600+",
-    label: "CEC Students placed in the last three years",
-  },
-  {
-    value: "86%+",
-    label: "Consistently Strong Placements CEC graduates placed over the last three years",
-  },
-  {
-    value: "9.5 LPA",
-    label: "Highest Package of 2024-25",
-  },
-];
-
-const logos = [
-  "/logos/cadence.png",
-  "/logos/deloitte.png",
-  "/logos/cerner.png",
-  "/logos/ibm.png",
-  "/logos/sap.png",
-  "/logos/accenture.png",
-  "/logos/vmware.png",
-  "/logos/verifone.png",
-  "/logos/sasken.png",
-  "/logos/juspay.png",
-];
 
 const PlacementSection = () => {
   return (

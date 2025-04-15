@@ -208,7 +208,7 @@ export const Card = ({ card, index, layout = false }: { card: Card; index: numbe
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
               </button>
-              <motion.p layoutId={layout ? `category-${card.title}` : undefined} className="text-base font-medium text-black dark:text-white">
+              <motion.p layoutId={layout ? `category-${card.title}` : undefined} className="text-lg font-medium text-black dark:text-white">
                 {card.category}
               </motion.p>
               <motion.p
@@ -229,7 +229,7 @@ export const Card = ({ card, index, layout = false }: { card: Card; index: numbe
       >
         {" "}
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-t from-[#1A97A2] via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-t from-[#1A97A2] via-transparent to-transparent z-20 pointer-events-none" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
