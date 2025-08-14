@@ -89,7 +89,7 @@ export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gr
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0   z-50 overflow-auto">
+          <div className="fixed inset-0 flex justify-center   z-50 overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
