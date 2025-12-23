@@ -34,7 +34,7 @@ const Footer = () => {
     } else {
       toast.error("Error submitting form.");
     }
-  }
+  };
   const {
     register,
     handleSubmit,
@@ -50,12 +50,12 @@ const Footer = () => {
     },
   });
   return (
-    <div className="relative flex flex-col items-center bg-[linear-gradient(to_bottom,white_50%,#156A7E_50%)] min-h-[100vh]">
-      <div className="relative z-10  p-8 md:py-24 rounded-lg shadow-2xl xl:max-w-7xl w-full lg:max-w-4xl bg-white mt-[5vh] lg:mt-[30vh] mb-10 md:mb-20">
+    <div id="contact-form" className="relative  flex flex-col items-center bg-[linear-gradient(to_bottom,white_50%,#156A7E_50%)] min-h-[100vh]">
+      <div className="relative z-10  p-8 md:py-24 rounded-lg shadow-2xl xl:max-w-7xl w-full lg:max-w-4xl bg-white mt-[5vh] lg:mt-[20vh] mb-10 md:mb-20">
         <h2 className="text-center text-[#1A97A2] font-semibold xl:text-[2.5rem] lg:text-[2rem]">Ready to Shape a Future Innovator</h2>
         <h3 className="text-center text-gray-800 font-bold text-xl pb-12  xl:text-[2.8rem] lg:text-[2rem]">Book Your Counselling Session Today!</h3>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7">
+        <form  onSubmit={handleSubmit(onSubmit)} className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7">
           {/* Full Name */}
           <div className="md:col-span-2">
             <input
@@ -117,11 +117,7 @@ const Footer = () => {
               type="submit"
               className="bg-[#1A97A2] mx-auto cursor-pointer text-white py-2 mt-12 px-6 rounded-3xl font-bold text-2xl flex items-center justify-center"
             >
-            {loading ? (
-                  <ClipLoader size={24} color="#fff" className="mt-2" />
-                ) : (
-                  "Apply"
-                )}
+              {loading ? <ClipLoader size={24} color="#fff" className="mt-2" /> : "Apply"}
             </button>
           </div>
         </form>
@@ -263,13 +259,13 @@ const Footer = () => {
         </div>
         <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/20">
           <div className="flex justify-between items-center text-white/56 text-sm">
-            <div>Copyright © 2024 CEC & Canara High School Association. All rights reserved</div>
+            <div>Copyright © {new Date().getFullYear()} CEC & Canara High School Association. All rights reserved</div>
             <div className="flex gap-4">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
               <span>|</span>
-              <Link href="/terms-of-use" className="hover:text-white transition-colors">
+              <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white transition-colors">
                 Terms of Use
               </Link>
             </div>
@@ -408,13 +404,15 @@ const Footer = () => {
             </div>
           </div>
           <hr className="w-[90%] border-t border-white/60 mb-4" />
-          <p className="text-[11px] text-white/60 px-3 ">Copyright © 2024 CEC & Canara High School Association. All rights reserved</p>
+          <p className="text-[11px] text-white/60 px-3 ">
+            Copyright © {new Date().getFullYear()} CEC & Canara High School Association. All rights reserved
+          </p>
           <div className="flex gap-2 text-xs text-white/60 mt-2">
-            <Link href="/privacy-policy" className="hover:text-white">
+            <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white">
               Privacy Policy
             </Link>
             <span>|</span>
-            <Link href="/terms-of-use" className="hover:text-white">
+            <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white">
               Terms of Use
             </Link>
           </div>
