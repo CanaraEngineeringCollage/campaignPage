@@ -38,7 +38,7 @@ const CampusWalkThrough = () => {
         viewport={{ once: true }}
         className="w-full xl:px-0 px-8 rounded-2xl overflow-hidden relative"
       >
-        <YouTubeEmbed videoid={getVideoId("https://youtu.be/RybrVD4uNUM?si=5RjWcVzIxWAe20zD") as string} />
+        <YouTubeEmbed videoid={getVideoId("https://www.youtube.com/watch?v=DotJvDklT5Y&t=1s") as string} />
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -46,9 +46,7 @@ const CampusWalkThrough = () => {
           viewport={{ once: true }}
           className="absolute bottom-4 right-4 flex gap-2"
         >
-          <button className="bg-none hidden md:block px-4 py-2 rounded-full text-sm text-white font-medium border-white border-2 transition-colors">
-            Take a virtual tour
-          </button>
+          
         </motion.div>
       </motion.div>
     </div>
