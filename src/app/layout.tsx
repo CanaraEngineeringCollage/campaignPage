@@ -17,21 +17,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Admissions 2025 – Canara Engineering College, Mangalore",
+  title: "Admissions 2026 | Canara Engineering College, Mangalore | Apply Now",
   description:
-    "Join Canara Engineering College, one of Karnataka’s top institutions for engineering education. Admissions open for B.E. programs with top placements and modern facilities.",
+    "Apply for Admissions 2026 at Canara Engineering College, Mangalore. One of Karnataka’s leading engineering colleges offering B.E. programs with excellent placements, modern infrastructure, industry-focused curriculum, and hostel facilities.",
+  keywords: [
+    "Admissions 2026",
+    "Canara Engineering College",
+    "Engineering College Mangalore",
+    "Top engineering colleges Karnataka",
+    "B.E admissions 2026",
+    "engineering courses Mangalore",
+    "best engineering college placements Karnataka",
+    "engineering admission 2026",
+  ],
   openGraph: {
-    title: "Admissions 2025 – Canara Engineering College",
+    title: "Admissions 2026 | Canara Engineering College, Mangalore",
     description:
-      "Secure your future at Canara Engineering College. Enroll now for industry-ready engineering programs with excellent placement support.",
-    url: "https://applycanara.vercel.app/",
+      "B.E Admissions 2026 open at Canara Engineering College, Mangalore. Get world-class engineering education, campus placements, modern labs, research support, and hostel facilities.",
+    url: "https://apply.canaraengineering.in/",
     siteName: "Canara Engineering College",
     images: [
       {
-        url: "https://applycanara.vercel.app/bg2.png",
+        url: "https://apply.canaraengineering.in/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Canara Engineering College Admissions 2025",
+        alt: "Canara Engineering College – Admissions 2026",
       },
     ],
     locale: "en_IN",
@@ -39,12 +49,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Admissions 2025 – Canara Engineering College",
+    title: "Admissions 2026 | Canara Engineering College (Apply Online)",
     description:
-      "Explore world-class engineering education at Canara Engineering College. Apply now for 2025 admissions.",
-    images: ["https://applycanara.vercel.app/bg2.png"],
+      "Admissions 2026 open for B.E courses at Canara Engineering College, Mangalore. Secure your future with industry-ready engineering programs & top placement support.",
+    images: ["https://apply.canaraengineering.in/images/og-image.png"],
   },
 };
+
 
 export default function RootLayout({
   children,

@@ -35,8 +35,10 @@ const HeroBanner = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const onSubmit = async (data: FormData) => {
+    router.push("/thank-you");
+
     setLoading(true);
-    const response = await fetch("https://applycanara.vercel.app/api/submit-form", {
+    const response = await fetch(`https://apiserver.cec.edu.in/admission-enquiries`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,13 +46,11 @@ const HeroBanner = () => {
       body: JSON.stringify(data),
     });
 
-    const result = await response.json();
-    if (result.result === "success") {
-      router.push("/thank-you");
+    if (response.ok) {
     } else {
       toast.error("Error submitting form.");
     }
-  }
+  };
   const formRef = useRef(null);
   const isFormInView = useInView(formRef, { once: true });
 
@@ -74,18 +74,8 @@ const HeroBanner = () => {
         >
           <SwiperSlide>
             <div className="relative w-full h-full">
-              <Image
-                src={websitebg1}
-                alt="Students 1"
-                fill
-                className="object-cover hidden md:block"
-              />
-              <Image
-                src={websitebg2}
-                alt="Students 1"
-                fill
-                className="object-cover md:hidden block"
-              />
+              <Image src={websitebg1} alt="Students 1" fill className="object-cover hidden md:block" />
+              <Image src={websitebg2} alt="Students 1" fill className="object-cover md:hidden block" />
               {/* Gradient overlay */}
               <div className="absolute bottom-0 left-0 right-0 h-[200px] md:h-[1000px] bg-gradient-to-t from-white via-white/85 via-50% to-transparent z-[10] md:hidden" />
               <div className="absolute bottom-0 left-0 right-0 h-[500px] md:h-[1000px] bg-gradient-to-t from-white via-transparent to-transparent z-[10] hidden md:block" />
@@ -128,9 +118,7 @@ const HeroBanner = () => {
               {...register("fullName", { required: "Full Name is required" })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
             />
-            {errors.fullName && (
-              <p className="text-red-500 text-sm">{errors.fullName.message}</p>
-            )}
+            {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
 
             <motion.input
               type="email"
@@ -138,9 +126,7 @@ const HeroBanner = () => {
               {...register("email", { required: "Email is required" })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
-            )}
+            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
             <motion.input
               type="tel"
@@ -150,9 +136,7 @@ const HeroBanner = () => {
               })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
             />
-            {errors.phoneNumber && (
-              <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
-            )}
+            {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
 
             <motion.textarea
               placeholder="Your Enquiry"
@@ -166,9 +150,7 @@ const HeroBanner = () => {
             />
             <div className="flex justify-between text-red-500 text-sm px-1">
               <span>{errors.comments?.message}</span>
-              <span className="text-gray-500">
-                {watch("comments")?.length || 0}/250
-              </span>
+              <span className="text-gray-500">{watch("comments")?.length || 0}/250</span>
             </div>
 
             <div className="flex justify-center">
@@ -178,11 +160,7 @@ const HeroBanner = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#1AA5A1] text-white px-8 py-2 rounded-full font-semibold text-lg"
               >
-                {loading ? (
-                  <ClipLoader size={24} color="#fff" className="mt-2" />
-                ) : (
-                  "Apply"
-                )}
+                {loading ? <ClipLoader size={24} color="#fff" className="mt-2" /> : "Apply"}
               </motion.button>
             </div>
           </form>
