@@ -112,7 +112,7 @@ export default function CardContent({
       {keyHighlights?.length > 0 && (
         <div className="mt-6">
           <h4 className={cn("text-lg px-8 font-semibold mb-2", headingColor)}>Key Highlights</h4>
-          <ul className="list-disc px-8 list-inside space-y-1 text-base">
+          <ul className="list-disc px-8 space-y-1 text-base ml-4">
             {keyHighlights.map((point, index) => (
               <li key={index} className={textColor}>
                 {point}
@@ -126,7 +126,7 @@ export default function CardContent({
       {additionalFeatures?.length > 0 && (
         <div className="mt-6 px-8">
           <h4 className={cn("text-lg font-semibold mb-2", headingColor)}>Additional Facilities</h4>
-          <ul className="list-disc list-inside space-y-1 text-base">
+          <ul className="list-disc space-y-1 text-base ml-4">
             {additionalFeatures.map((feature, index) => (
               <li key={index} className={textColor}>
                 {feature}

@@ -39,7 +39,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({
   subDescription,
   subHeading,
   subTitle,
-  centering
+  centering,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -272,10 +272,8 @@ function Innovations() {
             index={4}
           />
           <FacilityCard
-            title="On-Campus Dining"
-            description="A student-friendly space to relax, recharge, and relish.
-Our hygienic and spacious canteens offer a wide variety of vegetarian and non-vegetarian options, catering to diverse tastes. Nutritious and freshly prepared meals are sourced from Prathignhya Café and Can Café - Hangyo, ensuring quality with every bite. It's more than just a meal—it's part of the Canara experience.
-"
+            title="Canteen"
+            description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
             imageUrl="/images/activityImages/Image6.jpg"
             centering="object-[25%_center]"
             className="col-span-1"
