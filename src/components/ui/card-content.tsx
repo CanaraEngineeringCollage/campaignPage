@@ -94,7 +94,7 @@ export default function CardContent({
         <motion.p className="text-2xl md:text-4xl px-8  font-semibold text-neutral-700 mt-4 dark:text-white">{title}</motion.p>
       </motion.div>
       {/* Main Title + Description */}
-      <motion.p className={cn(textColor, "text-base pt-2 md:text-xl font-sans max-w-3xl px-8")}>{description}</motion.p>
+      <motion.p className={cn(textColor, "text-base pt-2 md:text-xl font-sans w-full  px-8")}>{description}</motion.p>
 
       {/* SubTitle */}
       {subTitle && <p className={cn("text-lg mt-4 px-8 font-semibold", headingColor)}>{subTitle}</p>}

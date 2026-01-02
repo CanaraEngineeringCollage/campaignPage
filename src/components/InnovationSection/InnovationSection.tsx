@@ -116,10 +116,10 @@ function Innovations() {
           />
           <FacilityCard
             title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
-            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coachesTo support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. "
+            description=""
             subTitle=""
             heading="Inaugurated and Blessed by"
-            subHeading="Shrimad Samyamindra Thirtha Swamiji, Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
+            subHeading="Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
             subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
             keyHighlights={[
               "Seating Capacity: 2,000",
@@ -159,7 +159,7 @@ function Innovations() {
           />
           <FacilityCard
             title="Well-Equipped Classrooms"
-            subTitle="Every classroom is a space where ideas thrive and interactions spark innovation"
+            bottomDescription="Every classroom is a space where ideas thrive and interactions spark innovation"
             description="Our classrooms are spacious, well-lit, and ergonomically designed to provide an ideal learning environment. Equipped with modern teaching aids such as projectors, smart boards, and high-speed internet, they ensure seamless integration of technology into everyday learning."
             imageUrl="/images/activityImages/Image4.jpg"
             className="lg:col-span-3 md:col-span-5 row-span-1 top-20"
@@ -204,10 +204,9 @@ function Innovations() {
           />
           <FacilityCard
             title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
-            description="At Manipal School, we believe that a healthy body nurtures a healthy mind. Our state-of-the-art sports infrastructure(Marena) is designed to meet the diverse physical training needs of our students. With dedicated spaces for cricket, basketball, football, and badminton, we provide ample opportunities for students to engage in sports under the guidance of experienced coachesTo support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. "
             subTitle=""
             heading="Inaugurated and Blessed by"
-            subHeading="Shrimad Samyamindra Thirtha Swamiji, Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
+            subHeading="Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
             subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
             keyHighlights={[
               "Seating Capacity: 2,000",
