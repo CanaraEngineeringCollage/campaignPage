@@ -19,8 +19,9 @@ const Footer = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const onSubmit = async (data: FormData) => {
+    router.push("/thank-you");
     setLoading(true);
-    const response = await fetch("https://applycanara.vercel.app/api/submit-form", {
+    const response = await fetch("https://apiserver.cec.edu.in/admission-enquiries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,9 +29,8 @@ const Footer = () => {
       body: JSON.stringify(data),
     });
 
-    const result = await response.json();
-    if (result.result === "success") {
-      router.push("/thank-you");
+    
+    if (response.ok) {
     } else {
       toast.error("Error submitting form.");
     }
@@ -55,7 +55,7 @@ const Footer = () => {
         <h2 className="text-center text-[#1A97A2] font-semibold xl:text-[2.5rem] lg:text-[2rem]">Ready to Shape a Future Innovator</h2>
         <h3 className="text-center text-gray-800 font-bold text-xl pb-12  xl:text-[2.8rem] lg:text-[2rem]">Book Your Counselling Session Today!</h3>
 
-        <form  onSubmit={handleSubmit(onSubmit)} className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-7">
           {/* Full Name */}
           <div className="md:col-span-2">
             <input
@@ -132,6 +132,7 @@ const Footer = () => {
             <div className="flex gap-4">
               {/* Social media icons will be added here */}
               <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Link href="https://www.linkedin.com/school/77697892/admin/dashboard/" target="_blank">
                 <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.88">
                     <path
@@ -154,8 +155,10 @@ const Footer = () => {
                     />
                   </g>
                 </svg>
+</Link>
               </div>
               <div className="w-8 h-8  rounded-full flex items-center justify-center">
+                  <Link href="https://www.instagram.com/cecmangalore/" target="_blank">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.88">
                     <path
@@ -200,8 +203,10 @@ const Footer = () => {
                     />
                   </g>
                 </svg>
+                </Link>
               </div>
               <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Link href="https://www.facebook.com/profile.php?id=61575102539032" target="_blank">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.88">
                     <path
@@ -218,8 +223,10 @@ const Footer = () => {
                     />
                   </g>
                 </svg>
+                </Link>
               </div>
               <div className="w-8 h-8  rounded-full flex items-center justify-center">
+                <Link href="https://www.youtube.com/@canaraengineeringcollegema3340" target="_blank">
                 <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.88">
                     <path
@@ -253,6 +260,7 @@ const Footer = () => {
                     />
                   </g>
                 </svg>
+                </Link>
               </div>
             </div>
           </div>
@@ -264,10 +272,7 @@ const Footer = () => {
               <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <span>|</span>
-              <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white transition-colors">
-                Terms of Use
-              </Link>
+              
             </div>
           </div>
         </div>
@@ -279,6 +284,7 @@ const Footer = () => {
           <h1 className="text-[14px] mb-2">Follow Us</h1>
           <div className="flex gap-4 mb-4">
             <div className="w-8 h-8 rounded-full flex items-center justify-center">
+              <Link href="https://www.linkedin.com/school/77697892/admin/dashboard/"  target="_blank">
               <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.88">
                   <path
@@ -301,9 +307,11 @@ const Footer = () => {
                   />
                 </g>
               </svg>
+              </Link>
             </div>
 
             <div className="w-8 h-8  rounded-full flex items-center justify-center">
+              <Link href="https://www.instagram.com/cecmangalore/" target="_blank">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.88">
                   <path
@@ -347,9 +355,12 @@ const Footer = () => {
                     strokeWidth="0.1"
                   />
                 </g>
+             
               </svg>
+               </Link>
             </div>
             <div className="w-8 h-8 rounded-full flex items-center justify-center">
+              <Link href="https://www.facebook.com/profile.php?id=61575102539032" target="_blank">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.88">
                   <path
@@ -366,8 +377,10 @@ const Footer = () => {
                   />
                 </g>
               </svg>
+              </Link>
             </div>
             <div className="w-8 h-8  rounded-full flex items-center justify-center">
+              <Link href="https://www.youtube.com/@canaraengineeringcollegema3340" target="_blank">
               <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.88">
                   <path
@@ -401,6 +414,7 @@ const Footer = () => {
                   />
                 </g>
               </svg>
+              </Link>
             </div>
           </div>
           <hr className="w-[90%] border-t border-white/60 mb-4" />
@@ -411,10 +425,7 @@ const Footer = () => {
             <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white">
               Privacy Policy
             </Link>
-            <span>|</span>
-            <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white">
-              Terms of Use
-            </Link>
+          
           </div>
         </div>
       </div>

@@ -103,7 +103,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           ref={carouselRef}
           onScroll={checkScrollability}
         >
-          <div className={cn("flex flex-row justify-start gap-4 ", " ps-5 lg:ps-0 max-w-7xl xl:max-w-[75%] mx-auto")}>
+          <div className={cn("flex flex-row justify-start gap-4 ", "pl-8 lg:pl-0 max-w-7xl  mx-auto")}>
             {items.map((item, index) => (
               <MotionDiv
                 initial={{ opacity: 0, y: 20 }}

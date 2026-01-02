@@ -46,7 +46,7 @@ const FutureSection = () => {
                 <div className="space-y-4 text-gray-600">
                   <p>
                     Canara Engineering College (CEC), a premier institute in Mangalore, is part of the Canara Group of Institutions, founded in 1891
-                    by Ammembal Subba Rao Pai—a visionary social reformer & philanthropist. Affiliated with Visvesvaraya Technological University &
+                    by Ammembal Subba Rao Pai-a visionary social reformer & philanthropist. Affiliated with Visvesvaraya Technological University &
                     approved by AICTE, CEC upholds a legacy of excellence, blending modern education with cultural values. Established in 2001 with
                     180 seats across three engineering branches, it has since expanded to seven branches with a total intake of 664 students, shaping
                     future-ready engineers through quality education & strong industry connections.

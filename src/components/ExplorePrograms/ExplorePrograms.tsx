@@ -22,7 +22,7 @@ export default function ExplorePrograms() {
 
   return (
    <div className="w-full h-full py-20 bg-[#F9FAFB]">
-      <h2 className="max-w-7xl pl-4 mx-auto lg:text-[2rem] text-[1.5rem] xl:text-[2.5rem] md:text-[2.5rem] font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="max-w-7xl ml-8  lg:mx-auto lg:text-[2rem] text-[1.5rem] xl:text-[2.5rem] md:text-[2.5rem] font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Explore our programs
       </h2>
       
