@@ -116,12 +116,9 @@ function Innovations() {
           />
           <FacilityCard
             title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
-            description=""
+            description="<b>Inaugurated and Blessed by</b> \n Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi \n A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure. "
             subTitle=""
-            heading="Inaugurated and Blessed by"
-            subHeading="Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
-            subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
-            keyHighlights={[
+              keyHighlights={[
               "Seating Capacity: 2,000",
               "Centrally Air-conditioned Environment",
               "Expansive 2,900 sq.m Carpet Area",
@@ -185,8 +182,8 @@ function Innovations() {
             index={4} // From left
           />
           <FacilityCard
-            title="Canteen"
-            description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
+            title="On-Campus Dining"
+            description="A student-friendly space to relax, recharge, and relish. Our hygienic and spacious canteens and mess facilities offer a wide range of vegetarian and non-vegetarian options to suit diverse tastes and daily needs. Nutritious, freshly prepared meals are served through Prathignhya Café and Can Café – Hangyo, while the newly introduced Can Café Express adds a vibrant hangout spot for quick bites and casual conversations. More than just dining, it’s an experience that brings the campus community together."
             imageUrl="/images/activityImages/Image6.jpg"
             className="lg:col-span-4 md:col-span-5 object-cover lg:max-w-[310px] row-span-2 xl:max-w-[310px] top-[-13rem]"
             gradientColor="#1A97A2"
@@ -205,10 +202,8 @@ function Innovations() {
           <FacilityCard
             title="Dr. P. Dayananda Pai & P. Sathish Pai Auditorium"
             subTitle=""
-            heading="Inaugurated and Blessed by"
-            subHeading="Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi"
-            subDescription="A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure."
-            keyHighlights={[
+            description="<b>Inaugurated and Blessed by</b> \n Shrimad Samyamindra Thirtha Swamiji,Mathadipathi, Shree Kashi Math Samsthan, Varanasi \n A symbol of excellence and grandeur, the auditorium stands as a proud landmark on campus. Designed to host large-scale events, academic gatherings, and cultural programs, it reflects our commitment to providing world-class infrastructure. "
+          keyHighlights={[
               "Seating Capacity: 2,000",
               "Centrally Air-conditioned Environment",
               "Expansive 2,900 sq.m Carpet Area",
@@ -272,8 +267,8 @@ function Innovations() {
             index={4}
           />
           <FacilityCard
-            title="Canteen"
-            description="We are committed to equipping our students with the knowledge and guidance needed to make informed decisions about their future. Through university fairs, career counseling sessions, and interactions with esteemed academicians, we provide students with valuable insights into higher education opportunities. College visits, workshops, Job shadowing program and mentorship programs help them explore diverse career paths, empowering them to make confident choices for their academic and professional journeys."
+            title="On-Campus Dining"
+            description="A student-friendly space to relax, recharge, and relish. Our hygienic and spacious canteens and mess facilities offer a wide range of vegetarian and non-vegetarian options to suit diverse tastes and daily needs. Nutritious, freshly prepared meals are served through Prathignhya Café and Can Café – Hangyo, while the newly introduced Can Café Express adds a vibrant hangout spot for quick bites and casual conversations. More than just dining, it’s an experience that brings the campus community together."
             imageUrl="/images/activityImages/Image6.jpg"
             centering="object-[25%_center]"
             className="col-span-1"
