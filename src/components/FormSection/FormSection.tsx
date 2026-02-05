@@ -1,10 +1,10 @@
 "use client";
-
-import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 type FormData = {
   fullName: string;
@@ -30,10 +30,20 @@ const CounselingForm = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const commentValue = watch("comments") || "";
   const router = useRouter();
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
+  };
+
   const onSubmit = async (data: FormData) => {
-     router.push("/thank-you");
+    if (!captchaToken) {
+      toast.error("Please verify you are not a robot");
+      return;
+    }
+    router.push("/thank-you");
     setLoading(true);
     const response = await fetch(`https://apiserver.cec.edu.in/admission-enquiries`, {
       method: "POST",
@@ -44,7 +54,6 @@ const CounselingForm = () => {
     });
 
     if (response.ok) {
-     
     } else {
       toast.error("Error submitting form.");
     }
@@ -132,6 +141,12 @@ const CounselingForm = () => {
             <div className="flex justify-between items-center mt-1">
               <div>{errors.comments && <p className="text-red-500 text-sm">{errors.comments.message}</p>}</div>
               <div className="text-sm text-gray-500">{commentValue.length}/250</div>
+            </div>
+          </div>
+
+          <div className="md:col-span-2 flex justify-center w-full overflow-hidden">
+            <div className="scale-75 sm:scale-100 origin-center">
+              <ReCAPTCHA sitekey="6LeUdV4sAAAAAEsNeOrKUWoA4yAU3MwGJo3ZRQsI" onChange={onCaptchaChange} theme="light" />
             </div>
           </div>
 

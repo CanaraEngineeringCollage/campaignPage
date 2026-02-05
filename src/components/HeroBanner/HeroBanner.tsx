@@ -1,5 +1,4 @@
 "use client"; // Required for using hooks in Next.js 13+ App Router
-
 import React, { useRef } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
@@ -16,6 +15,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormData {
   fullName: string;
@@ -33,8 +33,18 @@ const HeroBanner = () => {
     formState: { errors },
   } = useForm<FormData>();
   const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
+  };
+
   const onSubmit = async (data: FormData) => {
+    if (!captchaToken) {
+      toast.error("Please verify you are not a robot");
+      return;
+    }
     router.push("/thank-you");
 
     setLoading(true);
@@ -151,6 +161,12 @@ const HeroBanner = () => {
             <div className="flex justify-between text-red-500 text-sm px-1">
               <span>{errors.comments?.message}</span>
               <span className="text-gray-500">{watch("comments")?.length || 0}/250</span>
+            </div>
+
+            <div className="flex justify-center w-full overflow-hidden">
+              <div className="scale-75 sm:scale-100 origin-center">
+                <ReCAPTCHA sitekey="6LeUdV4sAAAAAEsNeOrKUWoA4yAU3MwGJo3ZRQsI" onChange={onCaptchaChange} theme="light" />
+              </div>
             </div>
 
             <div className="flex justify-center">
