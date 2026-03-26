@@ -44,13 +44,13 @@ const FutureSection = () => {
               <div className="relative z-10 space-y-6  flex-col flex">
                 <h1 className=" text-[1.5rem] lg:text-[45px] md:text-[2.5rem] font-semibold text-black leading-tight">Your Future Campus</h1>
                 <div className="space-y-4 text-gray-600">
-                <p>
-  Canara Engineering College (CEC), a premier institute in Mangalore, is part of the Canara Group of Institutions, founded in 1891
-  by Ammembal Subba Rao Pai-a visionary social reformer & philanthropist. Affiliated with Visvesvaraya Technological University,
-  approved by AICTE, and autonomous, CEC upholds a legacy of excellence, blending modern education with cultural values.
-  Established in 2001 with 180 seats across three engineering branches, it has since expanded to seven branches with a total intake
-  of 664 students, shaping future-ready engineers through quality education & strong industry connections.
-</p>
+                  <p>
+                    Canara Engineering College (CEC), a premier institute in Mangalore, is part of the Canara Group of Institutions, founded in 1891
+                    by Ammembal Subba Rao Pai, a visionary social reformer and philanthropist. Affiliated with Visvesvaraya Technological University,
+                    approved by AICTE and recognized as an autonomous institution, CEC upholds a legacy of excellence, blending modern education with
+                    cultural values. Established in 2001 with 180 seats across three engineering branches, it has since expanded to seven branches
+                    with a total intake of 664 students, shaping future-ready engineers through quality education and strong industry connections.
+                  </p>
                 </div>
               </div>
             </motion.div>
