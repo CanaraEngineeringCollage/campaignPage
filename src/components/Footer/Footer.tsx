@@ -164,7 +164,7 @@ const Footer = () => {
       <div className="w-full hidden md:block bg-[#156A7E] text-white p-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-end">
-            <Image src="/logo/logo.svg" alt="Logo" width={250} height={200} className="object-cover mt-6" />
+            <Image src="/logo/logoAutomomous.png" alt="Logo" width={250} height={200} className="object-cover cursor-pointer mt-6" />
           </div>
           <div className="flex flex-col items-end">
             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
@@ -317,7 +317,7 @@ const Footer = () => {
       </div>
       <div className="w-full md:hidden bg-[#156A7E] text-white pb-12  text-center">
         <div className="flex flex-col items-center">
-          <Image src="/logo/logo.svg" alt="Canara Engineering College Logo" width={270} height={270} className="object-cover mb-4" />
+          <Image src="/logo/logoAutomomous.png" alt="Canara Engineering College Logo" width={270} height={270} className="object-cover cursor-pointer mb-4" />
           <hr className="w-[90%] border-t border-white/60 mb-4" />
           <h1 className="text-[14px] mb-2">Follow Us</h1>
           <div className="flex gap-4 mb-4">
