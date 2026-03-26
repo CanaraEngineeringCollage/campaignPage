@@ -36,27 +36,6 @@ export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gr
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // In the useEffect for handling clicks outside
-  // In the useEffect for handling clicks outside
-  useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
-      // Changed from 'any'
-      if (!containerRef.current || containerRef.current.contains(event.target as Node)) {
-        return;
-      }
-      handleClose();
-    };
-
-    if (open) {
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
-    };
-  }, [open]);
   // Handle clicks outside the modal
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
@@ -74,6 +53,20 @@ export default function AppleStyledCard({ title, imageSrc, imageAlt, content, gr
     return () => {
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (open) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && open) handleClose();
+    };
+    
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [open]);
 

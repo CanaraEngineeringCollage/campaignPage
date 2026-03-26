@@ -24,7 +24,7 @@ const CounselingForm = () => {
     defaultValues: {
       fullName: "",
       email: "",
-      phoneNumber: "",
+      phoneNumber: "+91 ",
       comments: "",
     },
   });
@@ -105,11 +105,29 @@ const CounselingForm = () => {
             <input
               type="tel"
               placeholder="Your Phone Number"
+              maxLength={14}
               {...register("phoneNumber", {
                 required: "Phone number is required",
                 pattern: {
-                  value: /^\+?[\d\s-]{10,15}$/,
-                  message: "Please enter a valid phone number (10-15 digits)",
+                  value: /^\+91 [0-9]{10}$/,
+                  message: "Please enter a valid 10-digit phone number",
+                },
+                onChange: (e) => {
+                  let val = e.target.value;
+                  if (val.startsWith("+91 ")) {
+                    e.target.value =
+                      "+91 " +
+                      val
+                        .substring(4)
+                        .replace(/[^0-9]/g, "")
+                        .substring(0, 10);
+                  } else if (val === "+91" || val === "+9" || val === "+" || val === "") {
+                    e.target.value = "+91 ";
+                  } else {
+                    const digits = val.replace(/[^0-9]/g, "");
+                    const phone = digits.length > 10 && digits.startsWith("91") ? digits.substring(2) : digits;
+                    e.target.value = "+91 " + phone.substring(0, 10);
+                  }
                 },
               })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"

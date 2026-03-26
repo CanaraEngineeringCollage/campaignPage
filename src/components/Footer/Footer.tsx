@@ -55,7 +55,7 @@ const Footer = () => {
     defaultValues: {
       fullName: "",
       email: "",
-      phoneNumber: "",
+      phoneNumber: "+91 ",
       comments: "",
     },
   });
@@ -84,8 +84,30 @@ const Footer = () => {
             <input
               type="tel"
               placeholder="Your Phone Number"
+              maxLength={14}
               {...register("phoneNumber", {
                 required: "Your Phone is required",
+                pattern: {
+                  value: /^\+91 [0-9]{10}$/,
+                  message: "Please enter a valid 10-digit phone number",
+                },
+                onChange: (e) => {
+                  let val = e.target.value;
+                  if (val.startsWith("+91 ")) {
+                    e.target.value =
+                      "+91 " +
+                      val
+                        .substring(4)
+                        .replace(/[^0-9]/g, "")
+                        .substring(0, 10);
+                  } else if (val === "+91" || val === "+9" || val === "+" || val === "") {
+                    e.target.value = "+91 ";
+                  } else {
+                    const digits = val.replace(/[^0-9]/g, "");
+                    const phone = digits.length > 10 && digits.startsWith("91") ? digits.substring(2) : digits;
+                    e.target.value = "+91 " + phone.substring(0, 10);
+                  }
+                },
               })}
               className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
             />
@@ -149,7 +171,7 @@ const Footer = () => {
             <div className="flex gap-4">
               {/* Social media icons will be added here */}
               <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                <Link href="https://www.linkedin.com/school/77697892/admin/dashboard/" target="_blank">
+                <Link href="https://www.linkedin.com/school/canara-engineering-college-official" target="_blank">
                   <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.88">
                       <path
@@ -300,7 +322,7 @@ const Footer = () => {
           <h1 className="text-[14px] mb-2">Follow Us</h1>
           <div className="flex gap-4 mb-4">
             <div className="w-8 h-8 rounded-full flex items-center justify-center">
-              <Link href="https://www.linkedin.com/school/77697892/admin/dashboard/" target="_blank">
+              <Link href="https://www.linkedin.com/school/canara-engineering-college-official" target="_blank">
                 <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.88">
                     <path

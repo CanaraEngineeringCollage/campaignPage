@@ -31,7 +31,14 @@ const HeroBanner = () => {
     reset,
     watch,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phoneNumber: "+91 ",
+      comments: "",
+    },
+  });
   const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
@@ -141,8 +148,30 @@ const HeroBanner = () => {
             <motion.input
               type="tel"
               placeholder="Your Phone Number"
+              maxLength={14}
               {...register("phoneNumber", {
                 required: "Phone Number is required",
+                pattern: {
+                  value: /^\+91 [0-9]{10}$/,
+                  message: "Please enter a valid 10-digit phone number",
+                },
+                onChange: (e) => {
+                  let val = e.target.value;
+                  if (val.startsWith("+91 ")) {
+                    e.target.value =
+                      "+91 " +
+                      val
+                        .substring(4)
+                        .replace(/[^0-9]/g, "")
+                        .substring(0, 10);
+                  } else if (val === "+91" || val === "+9" || val === "+" || val === "") {
+                    e.target.value = "+91 ";
+                  } else {
+                    const digits = val.replace(/[^0-9]/g, "");
+                    const phone = digits.length > 10 && digits.startsWith("91") ? digits.substring(2) : digits;
+                    e.target.value = "+91 " + phone.substring(0, 10);
+                  }
+                },
               })}
               className="w-full border-b border-gray-300 focus:outline-none text-lg py-2"
             />

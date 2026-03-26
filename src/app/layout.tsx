@@ -90,7 +90,7 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-
+        <Script src="/smoothScroll/smoothScroll.js" />
         <Navbar />
         <Toaster position="top-right" />
         {children}
