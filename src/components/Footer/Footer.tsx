@@ -305,8 +305,19 @@ const Footer = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/20">
-          <div className="flex justify-between items-center text-white/56 text-sm">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0 text-white/56 text-sm text-center lg:text-left">
             <div>Copyright © {new Date().getFullYear()} CEC & Canara High School Association. All rights reserved</div>
+            <div>
+              Designed and Developed by{" "}
+              <Link
+                href="https://megamind.studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors underline underline-offset-2"
+              >
+                Megamind Studios
+              </Link>
+            </div>
             <div className="flex gap-4">
               <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white transition-colors">
                 Privacy Policy
@@ -457,6 +468,17 @@ const Footer = () => {
           <hr className="w-[90%] border-t border-white/60 mb-4" />
           <p className="text-[11px] text-white/60 px-3 ">
             Copyright © {new Date().getFullYear()} CEC & Canara High School Association. All rights reserved
+          </p>
+          <p className="text-[11px] text-white/60 px-3 mt-2">
+            Designed and Developed by{" "}
+            <Link
+              href="https://megamind.studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white underline underline-offset-2"
+            >
+              Megamind Studios
+            </Link>
           </p>
           <div className="flex gap-2 text-xs text-white/60 mt-2">
             <Link href="https://cec.edu.in/privacy-policy" target="_blank" className="hover:text-white">
